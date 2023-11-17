@@ -1,0 +1,33 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+{/* setup utililty classess */}
+ 
+@layer utilities {
+    .section_padding{
+        
+    }
+
+    .flex_center {
+      @apply flex justify-center items-center;
+    }
+
+    .flex_between {
+      @apply flex justify-between
+    }
+}
+
+
+
+/* Hide scrollbar for Chrome, Safari and Opera */
+.hide-scrollbar::-webkit-scrollbar {
+    display: none;
+  }
+  
+  /* Hide scrollbar for IE, Edge and Firefox */
+  .hide-scrollbar {
+    -ms-overflow-style: none; /* IE and Edge */
+    scrollbar-width: none; /* Firefox */
+  }

@@ -1,0 +1,134 @@
+Background Colors:
+
+Main Background Color: #F9F5F0 (Creamy White)
+Secondary Background Color (Optional): #F3F3F3 (Light Gray)
+
+-------------------------------------------------------------------
+
+Header and Banner Colors:
+
+Header Background Color: #6BBB6D (Soft Green)
+Header Text Color: #FFFFFF (White)
+Banner Background Color (Optional): #A0AB84 (Subtle Gray-Green)
+Banner Text Color: #FFFFFF (White)
+
+-------------------------------------------------------------------
+
+Navigation and Links:
+
+Navigation Links: #333333 (Dark Gray)
+Active Navigation Link: #6BBB6D (Soft Green)
+Hover/Active States (Links/Buttons): #388E3C (Dark Green)
+
+-------------------------------------------------------------------
+
+Card and Product Listings:
+
+Card Background Color: #FFFFFF (White)
+Card Border Color: #E0E0E0 (Light Gray)
+Product Name Color: #333333 (Dark Gray)
+Product Price Color: #4CAF50 (Green)
+Add to Cart Button Color: #4CAF50 (Green)
+Add to Cart Button Text Color: #FFFFFF (White)
+
+-------------------------------------------------------------------
+
+Product Detail Page:
+
+Background Color (Optional): #F9F5F0 (Creamy White)
+Text Colors: #333333 (Dark Gray)
+Button Colors: #4CAF50 (Green) for CTA buttons
+
+-------------------------------------------------------------------
+
+Shopping Cart:
+
+Cart Background Color: #FFFFFF (White)
+Cart Border Color: #E0E0E0 (Light Gray)
+Cart Item Text Color: #333333 (Dark Gray)
+Cart Total Text Color: #333333 (Dark Gray)
+Proceed to Checkout Button Color: #4CAF50 (Green)
+
+-------------------------------------------------------------------
+
+Checkout Page:
+
+Checkout Background Color: #F9F5F0 (Creamy White)
+Form Input Background: #FFFFFF (White)
+Form Input Border Color: #E0E0E0 (Light Gray)
+Form Text Color:   (Dark Gray)
+Submit Button Color: #4CAF50 (Green)
+
+-------------------------------------------------------------------
+
+User Profile Page:
+
+Profile Background Color: #F9F5F0 (Creamy White)
+Text Colors: #333333 (Dark Gray)
+Button Colors: #4CAF50 (Green) for Save Changes button
+
+-------------------------------------------------------------------
+
+Admin Dashboard:
+
+Dashboard Background Color: #F9F5F0 (Creamy White)
+Text Colors: #333333 (Dark Gray)
+Button Colors: #4CAF50 (Green) for action buttons
+Admin Section Background (Optional): #BFB5A2 (Warm Taupe)
+
+-------------------------------------------------------------------
+
+Error Messages:
+
+Error Message Background: #FFCDD2 (Light Red)
+Error Message Text: #D32F2F (Dark Red)
+
+-------------------------------------------------------------------
+
+Success Messages:
+
+Success Message Background: #C8E6C9 (Light Green)
+Success Message Text: #4CAF50 (Green)
+
+-------------------------------------------------------------------
+
+Footer:
+
+Footer Background Color: #6BBB6D (Soft Green)
+Footer Text Color: #FFFFFF (White)
+Optional Accent Colors (for special highlights):
+
+Accent Color 1: #FFD54F (Yellow)
+Accent Color 2: #1976D2 (Blue)
+
+---------------------------------------------------------------------
+color palette for the login and registration page elements:
+
+Background Color:
+
+Background Color: #F9F5F0 (Creamy White)
+Text Colors:
+
+Text Color: #333333 (Dark Gray)
+Placeholder Text Color: #A0AB84 (Subtle Gray-Green)
+Label Text Color: #333333 (Dark Gray)
+Input Fields:
+
+Input Field Background: #FFFFFF (White)
+Input Field Border Color (Focused): #6BBB6D (Soft Green)
+Input Field Border Color (Default): #E0E0E0 (Light Gray)
+Buttons:
+
+Button Background Color: #4CAF50 (Green)
+Button Text Color: #FFFFFF (White)
+Error Messages:
+
+Error Message Background: #FFCDD2 (Light Red)
+Error Message Text: #D32F2F (Dark Red)
+Success Messages:
+
+Success Message Background: #C8E6C9 (Light Green)
+Success Message Text: #4CAF50 (Green)
+
+
+
