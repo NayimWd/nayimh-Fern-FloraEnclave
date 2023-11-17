@@ -1,14 +1,8 @@
 import { Toaster } from "react-hot-toast";
-import {
-	ErrorToast,
-	SuccessToast,
-	LoadingToast,
-	sweetSuccess,
-	sweeterror,
-} from "./ui/helper";
 import FullScreenLoader from "./ui/loader/FullScreenLoader";
 import { useState } from "react";
-import Login from "./components/Login";
+import { Outlet } from "react-router-dom";
+
 
 function App() {
 	// full screen loader
@@ -25,7 +19,7 @@ function App() {
 	return !loading ? (
 		<div className="container overflow-hidden">
 			<Toaster />
-			<Login />
+			<Outlet/>
 		</div>
 	) : (
 		<div className="fixed top-0 left-0 w-full h-full ">

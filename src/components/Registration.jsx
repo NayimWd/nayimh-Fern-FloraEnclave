@@ -1,17 +1,16 @@
-import React from "react";
+import React from 'react';
 import Input from "../ui/Input";
 import loginBg from "../assets/image/loginImg.png";
 import { FcGoogle } from "react-icons/fc";
 import { FaFacebook } from "react-icons/fa";
 import { Link } from "react-router-dom";
 
-const Login = () => {
-	const handleSubmit = (e) => {
+const Registration = () => {
+    const handleSubmit = (e) => {
 		e.preventDefault();
 	};
-
-	return (
-		<div className="container flex items-center justify-center min-h-screen w-full bg-white_clr">
+  return (
+    <div className="container flex items-center justify-center min-h-screen w-full bg-white_clr">
 			{/*/ container */}
 			<div className="flex bg-creamy_white  rounded-md">
 				{/* form */}
@@ -24,6 +23,13 @@ const Login = () => {
 							Enter your Credentials to access your account
 						</p>
 						<form onSubmit={(e) => handleSubmit(e)} className="mt-7">
+							<Input
+								type={"text"}
+								placeHolder={"Enter Your Name"}
+								label={"name"}
+                                
+							/>
+
 							<Input
 								type={"text"}
 								placeHolder={"Enter Your Email"}
@@ -73,7 +79,7 @@ const Login = () => {
 						<p className="text-center text-lg text-dark_gray font-semibold font-reem">
 							Don't have an account?{" "}
 							<span className="text-darker_green font-extrabold cursor-pointer font-sans">
-								<Link to="/signup"> Sign Up </Link>
+								<Link to="/signin"> Sign In </Link>
 							</span>
 						</p>
 					</div>
@@ -84,7 +90,7 @@ const Login = () => {
 				</div>
 			</div>
 		</div>
-	);
-};
+  )
+}
 
-export default Login;
+export default Registration
