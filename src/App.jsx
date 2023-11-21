@@ -1,7 +1,8 @@
+import { Outlet } from "react-router-dom";
 import { Toaster } from "react-hot-toast";
 import FullScreenLoader from "./ui/loader/FullScreenLoader";
-import { useState } from "react";
-import { Outlet } from "react-router-dom";
+import { Suspense, useState } from "react";
+import ComponentLoader from "./ui/loader/ComponentLoader";
 
 
 function App() {
@@ -13,13 +14,15 @@ function App() {
 	if (loader) {
 		setTimeout(() => {
 			setLoading(false);
-		}, 200);
+		}, 500);
 	}
 
 	return !loading ? (
 		<div className="container overflow-hidden">
 			<Toaster />
+		
 			<Outlet/>
+			
 		</div>
 	) : (
 		<div className="fixed top-0 left-0 w-full h-full ">

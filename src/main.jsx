@@ -1,4 +1,4 @@
-import React from "react";
+import React, {lazy, Suspense} from "react";
 import ReactDOM from "react-dom/client";
 import App from "./App.jsx";
 import "./index.css";
@@ -11,8 +11,9 @@ import {
 	createRoutesFromElements,
 } from "react-router-dom";
 import Home from "./pages/Home.jsx";
-import Login from "./components/Login.jsx";
-import Registration from "./components/Registration.jsx";
+import ComponentLoader from "./ui/loader/ComponentLoader.jsx";
+const LazyLogin = lazy(()=> import("./components/Login.jsx"))
+const LazySignUp = lazy(()=> import("./components/Registration.jsx"));
 
 {
 	/* ---- OnBlur Title set ---- */
@@ -31,11 +32,13 @@ window.addEventListener("focus", () => {
 // Router setup
 const router = createBrowserRouter(
 	createRoutesFromElements(
+		
 		<Route path="/" element={<App />}>
-			<Route index={true} path="/" element={<Home/>}/>
-      <Route path="/signin" element={<Login/>}/>
-      <Route path="/signup" element={<Registration/>}/>
-		</Route>
+		<Route index={true} path="/" element={<Home/>}/>
+      <Route path="/signin" element={<LazyLogin/>}/>
+      <Route path="/signup" element={<LazySignUp/>}/>
+	  </Route>
+	  
 	)
 );
 
@@ -44,6 +47,8 @@ const router = createBrowserRouter(
 }
 ReactDOM.createRoot(document.getElementById("root")).render(
 	<React.StrictMode>
+	<Suspense fallback={<ComponentLoader/>}>
 		<RouterProvider router={router} />
+		</Suspense>
 	</React.StrictMode>
 );

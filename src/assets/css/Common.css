@@ -88,7 +88,7 @@ svg {
   height: 100%;
 }
 svg text {
-	animation: stroke 4.8s infinite alternate;
+	animation: stroke 4.5s infinite alternate;
 	stroke-width: 2;
 	stroke: #0B3223;
 
