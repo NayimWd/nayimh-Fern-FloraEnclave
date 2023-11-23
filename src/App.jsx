@@ -13,8 +13,9 @@ function App() {
 
 	if (loader) {
 		setTimeout(() => {
+			
 			setLoading(false);
-		}, 500);
+		}, 100);
 	}
 
 	return !loading ? (

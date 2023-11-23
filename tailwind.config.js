@@ -23,6 +23,7 @@ export default {
 			fontFamily: {
 				reem: ["Reem Kufi", "sans-serif"],
 				sans: ["Nunito Sans", "sans-serif"],
+				lato: ["Lato", "sans-serif"],
 			},
 			colors: {
 				creamy_white: "#F9F5F0",
@@ -31,8 +32,9 @@ export default {
 				dark_gray: "#333333",
 				subtle_gray: "#A0AB84",
 				border_clr: "#E0E0E0",
-				dark_green: "#388E3C",
+				dark_green: "#145333",
 				darker_green: "#0B3223",
+				bg_green: "#004F44",
 				green: "#4CAF50",
 				soft_green: "#6BBB6D",
 				warm_tupe: "#BFB5A2",

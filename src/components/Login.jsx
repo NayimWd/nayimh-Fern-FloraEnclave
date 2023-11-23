@@ -3,6 +3,7 @@ import Input from "../ui/Input";
 import loginBg from "../assets/image/loginImg.png";
 import { FcGoogle } from "react-icons/fc";
 import { FaFacebook } from "react-icons/fa";
+import { TiHome } from "react-icons/ti";
 import { Link, useNavigate } from "react-router-dom";
 import { ErrorToast, SuccessToast, isEmail, isEmpty, isPassword } from "../ui/helper";
 
@@ -61,9 +62,9 @@ const Login = () => {
 				{/* form */}
 				<div className="w-full md:w-1/2 flex flex-col justify-center items-center ">
 					<div className="w-full xsm:w-[404px]  px-4 xsm:px-8 py-[50px]  md:py-14">
-						<h1 className="font-sans font-bold text-darker_green text-3xl  md:text-4xl">
-							Welcome back!
-						</h1>
+					<span className="font-sans font-bold text-darker_green text-3xl  md:text-4xl flex_between items-center">
+					<h1>Welcome Back</h1> <Link to="/"> <TiHome className='w-9 cursor-pointer'/> </Link>
+					</span>
 						<p className="text-darker_green text-[16px] sm:text-[18px] mt-1 font-sans">
 							Enter your Credentials to access your account
 						</p>
@@ -88,7 +89,7 @@ const Login = () => {
 
 							<div className="flex justify-between -mt-2 mb-4 px-1 text-sm text-subtle_gray">
 								<span className="flex gap-2">
-									<input className="accent-dark_green" type="checkbox" onClick={handleChange}
+									<input className="accent-dark_green cursor-pointer" type="checkbox" onClick={handleChange}
 									name="check" />{" "}
 									<p>remember me</p>
 								</span>
