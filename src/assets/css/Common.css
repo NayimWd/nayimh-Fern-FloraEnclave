@@ -1,54 +1,4 @@
-/* .custom-loader {
-  width: 100px;
-  height: 100px;
-  display: grid;
-  border:8px solid #0000;
-  border-radius: 50%;
-  border-color:#6BBB6D #0000;
-  animation: s6 1s infinite linear;
-}
-.custom-loader::before,
-.custom-loader::after {    
-  content:"";
-  grid-area: 1/1;
-  margin:4px;
-  border:inherit;
-  border-radius: 50%;
-}
-.custom-loader::before {
-  border-color:#4CAF50 #0000;
-  animation:inherit; 
-  animation-duration: .5s;
-  animation-direction: reverse;
-}
-.custom-loader::after {
-  margin:16px;
-}
-
-@keyframes s6 { 
-  100%{transform: rotate(1turn)}
-} */
-
-{/* Loader */}
-/* 
-.custom-loader {
-  width: 200px;
-  height: 200px;
-  --c:radial-gradient(farthest-side,#0e402d 95%,#0000);
-  background:
-    var(--c) 0    0,
-    var(--c) 100% 0,
-    var(--c) 100% 100%,
-    var(--c) 0    100%;
-  background-size: 50px 50px;
-  background-repeat: no-repeat;
-  animation:d8 .5s infinite; 
-}
-
-@keyframes d8 {
-  100% {background-position: 100% 0,100% 100%,0 100%,0 0}
-} */
-
+// custom colader
 .custom-loader {
   width: 120px;
   height: 120px;
@@ -211,3 +161,34 @@ svg text {
   display: none !important;
 }
 
+// slide effect
+.slideInLeft {
+  -webkit-animation-name: slideInLeft;
+  animation-name: slideInLeft;
+  -webkit-animation-duration: 1s;
+  animation-duration: 1s;
+  -webkit-animation-fill-mode: both;
+  animation-fill-mode: both;
+  }
+  @-webkit-keyframes slideInLeft {
+  0% {
+  -webkit-transform: translateX(-100%);
+  transform: translateX(-100%);
+  visibility: visible;
+  }
+  100% {
+  -webkit-transform: translateX(0);
+  transform: translateX(0);
+  }
+  }
+  @keyframes slideInLeft {
+  0% {
+  -webkit-transform: translateX(-100%);
+  transform: translateX(-100%);
+  visibility: visible;
+  }
+  100% {
+  -webkit-transform: translateX(0);
+  transform: translateX(0);
+  }
+  } 

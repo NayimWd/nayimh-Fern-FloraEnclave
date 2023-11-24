@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react'
+import React, { useEffect, useRef, useState } from 'react'
 import { Link, NavLink } from 'react-router-dom';
 import logo from "../assets/image/plantLogo.svg";
 import cart from "../assets/icon/cart.png";
@@ -18,6 +18,19 @@ const Navbar = () => {
   const toggleMenu = () => {
     setIsOpen(!isOpen);
   }
+// close menu on outsite click
+let menuRef = useRef();
+
+// function
+useEffect(()=>{
+  let handler = (e) => {
+    if(!menuRef.current.contains(e.target)){
+      setIsOpen(false)
+    }
+  }
+  document.addEventListener('mousedown', handler);
+},[])
+
 
   // sticky on scroll function
   useEffect(()=>{
@@ -46,7 +59,7 @@ const Navbar = () => {
   ]
 
   return (
-    <header className='fixed w-[100vw] top-0 left-0 right-0 z-10'>
+    <header className='fixed w-[100vw] top-0 left-0 -right-[1px] z-10'>
     {/* contact info large screen */}
       <div className={`${isSticky ? "hidden" : "block" }`}>
       <div className={`hidden sm:flex justify-center w-full h-12  items-center bg-dark_green border-b border-darker_green px-8 overflow-x-hidden `}>
@@ -95,7 +108,7 @@ const Navbar = () => {
       </marquee>
       </div>
       </div>
-    <nav className={`w-full px-2 lg:px-8 py-4 border-b  ${isSticky ? "sticky top-0 left-0 right-0 bg-bg_green duration-300 shadow-xl" : "bg-dark_green border-darker_green"}`}>
+    <nav className={`w-full px-2 lg:px-8 py-4 border-b  ${isSticky ? "sticky top-0 left-0 -right-1 bg-bg_green duration-300 shadow-xl" : "bg-dark_green border-darker_green"}`}>
       <div className='flex_between items-center font-sans'>
      {/* logo and name */}
      <Link to="/">
@@ -126,16 +139,17 @@ const Navbar = () => {
             <img className='cursor-pointer hover:scale-110 delay-200 ease-in' src={search} alt='cart'/>
           </div>
           <div className='flex_center lg:hidden'>
-          <button onClick={toggleMenu} className='focus:outline-none focus:text-darker_green cursor-pointer  '>
+          <button onClick={toggleMenu} className='focus:outline-none focus:text-darker_green cursor-pointer p-1 bg-darker_green rounded'>
             {
-              isOpen ? <MdOutlineClose className='w-8 h-8 text-white_clr'/> : <CiMenuFries className='w-6 h-6 text-white_clr' />
+              isOpen ? <MdOutlineClose className='w-6 h-6 text-white_clr'/> : <CiMenuFries className='w-6 h-6 text-white_clr' />
             }
           </button>
           </div>
       </div>
       {/* item for mobile screen */}
-      <div className={`flex flex-col lg:hidden items-center gap-5 py-8 px-4 w-full xsm:w-[250px] rounded ${isSticky ? "bg-bg_green mt-[80px]" : "bg-dark_green mt-[130px]"} ${isOpen ? "block fixed top-0  right-0" : "hidden"}`}>
+      <div ref={menuRef} className={` flex flex-col lg:hidden items-center gap-6 py-10 px-4   rounded z-10 ${isSticky ? "bg-bg_green mt-[80px]" : "bg-dark_green mt-[130px]"} ${isOpen ? "block  fixed w-[280px] top-0  -right-[1px]" : "hidden "}`}>
       {
+        
         navItems.map(({link, path})=>(
           <NavLink className={({ isActive, isPending }) =>
           isPending ? "text-darker_green" : isActive ? "text-green" : "text-white_clr"
@@ -152,5 +166,3 @@ const Navbar = () => {
 
 export default Navbar
 
-
-// ${isSticky ? "hidden" : "block" }
