@@ -13,6 +13,10 @@ import {
 } from "react-router-dom";
 import Home from "./pages/Home.jsx";
 import ComponentLoader from "./ui/loader/ComponentLoader.jsx";
+import Products from "./pages/Products.jsx";
+import About from "./pages/About.jsx";
+import Layout from "./pages/Dashboard/Layout.jsx";
+import Contact from "./pages/Contact.jsx";
 const LazyLogin = lazy(()=> import("./components/Login.jsx"))
 const LazySignUp = lazy(()=> import("./components/Registration.jsx"));
 
@@ -48,6 +52,13 @@ const router = createBrowserRouter(
 		
 		<Route path="/" element={<App />}>
 		<Route index={true} path="/" element={<Home/>}/>
+		<Route  path="/products" element={<Products/>}/>
+		<Route  path="/about" element={<About/>}/>
+		<Route  path="/contact" element={<Contact/>}/>
+		{/* dashboard*/}
+		<Route path="/dashboard" element={<Layout/>}>
+		
+		</Route>
       <Route path="/signin" element={<LazyLogin/>}/>
       <Route path="/signup" element={<LazySignUp/>}/>
 	  </Route>
