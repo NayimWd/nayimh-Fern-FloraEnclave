@@ -6,8 +6,12 @@
 {/* setup utililty classess */}
  
 @layer utilities {
-    .section_padding{
-        
+    .section_p-y{
+        @apply py-14 xsm:py-20 sm:py-24 lg:py-[120px]
+    }
+
+    .padding_x {
+      @apply px-2 sm:px-3 
     }
 
     .flex_center {
@@ -31,6 +35,14 @@
     .slider_out{
       @apply invisible opacity-0 translate-x-[200px] delay-100 duration-300 ease-in
     }
+
+    .btn_animation-top {
+      @apply block transition duration-300 hover:bg-left-top 
+    }
+
+    .overlay {
+      @apply h-full w-full overflow-hidden bg-dark_gray/30 flex  -bottom-32  hover:bottom-0 left-0 opacity-0 hover:opacity-100 cursor-pointer transition-all duration-300 
+    }
 }
 
 
@@ -45,3 +57,5 @@
     -ms-overflow-style: none; /* IE and Edge */
     scrollbar-width: none; /* Firefox */
   }
+
+  /* sm:px-4 md:px-5 lg:px-7 */

@@ -19,7 +19,7 @@ import Layout from "./pages/Dashboard/Layout.jsx";
 import Contact from "./pages/Contact.jsx";
 const LazyLogin = lazy(()=> import("./components/Login.jsx"))
 const LazySignUp = lazy(()=> import("./components/Registration.jsx"));
-
+import { Helmet, HelmetProvider } from 'react-helmet-async';
 let loading = window.onload;
 
 TopBarProgress.config({
@@ -75,7 +75,9 @@ ReactDOM.createRoot(document.getElementById("root")).render(
 		{
 			loading && <TopBarProgress />
 		}
+		
 		<RouterProvider router={router} />
+		
 		</Suspense>
 	</React.StrictMode>
 );

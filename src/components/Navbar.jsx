@@ -74,7 +74,7 @@ const Navbar = () => {
 	// sticky on scroll function
 	useLayoutEffect(() => {
 		const handleScroll = () => {
-			if (window.scrollY > 300) {
+			if (window.scrollY > 500) {
 				setIsSticky(true);
 			} else {
 				setIsSticky(false);
@@ -100,13 +100,15 @@ const Navbar = () => {
 	];
 
 	return (
-		<header className="fixed w-[100vw] top-0 left-0 -right-[1px] z-10">
-			{/* contact info large screen */}
+		<header className="fixed  w-[100vw] top-0 left-0 -right-[1px] h-16 z-10">
+			{/* ---------------------------------------- */}
+			{/* position above the navbar contact info large screen */}
+			 <meta name="description" content="Home"/>
 			<div className={`${isSticky ? "hidden" : "block"}`}>
 				<div
-					className={`hidden sm:flex justify-center w-full h-12  items-center bg-bg_green border-b border-darker_green px-8 overflow-x-hidden `}
+					className={`hidden  sm:flex justify-center w-full h-12  items-center bg-bg_green border-b-2 border-dark_green padding_x overflow-x-hidden `}
 				>
-					<div className="flex w-full items-center justify-between gap-10 md:gap-0">
+					<div className="container flex w-full items-center justify-between gap-10 md:gap-0">
 						<span className="flex_center gap-1">
 							<MdLocationOn className="w-4 h-4 text-white" />
 							<p className="text-white"> Baghopara, Bogura</p>
@@ -126,10 +128,10 @@ const Navbar = () => {
 			{/* contact info small screen */}
 			<div className={`${isSticky ? "hidden" : "block"}`}>
 				<div
-					className={`flex sm:hidden justify-center w-full h-12  items-center bg-bg_green border-b border-darker_green px-8 overflow-x-hidden `}
+					className={`flex  sm:hidden justify-center w-full h-12  items-center bg-bg_green border-b border-darker_green padding_x overflow-x-hidden `}
 				>
 					<marquee className="sm:hidden">
-						<div className="flex w-full items-center justify-between gap-10 md:gap-0">
+						<div className="flex w-full items-center justify-between gap-10 md:gap-0 padding_x">
 							<span className="flex_center gap-1">
 								<MdLocationOn className="w-4 h-4 text-white" />
 								<p className="text-white"> Baghopara, Bogura</p>
@@ -147,14 +149,17 @@ const Navbar = () => {
 					</marquee>
 				</div>
 			</div>
+			{/* ---------------------------------------- */}
+			{/* Navbar start */}
 			<nav
-				className={`w-full relative px-2 lg:px-8 py-4 border-b  ${
+				className={` w-full  relative padding_x py-4   ${
 					isSticky
-						? "sticky top-0 left-0 -right-1 bg-bg_green delay-150 duration-300 shadow-xl"
-						: "bg-bg_green border-darker_green"
+						? "sticky top-0 left-0 -right-1 bg-bg_green shadow-xl delay-300	"
+						: "bg-bg_green   "
 				}`}
 			>
-				<div className="flex_between items-center font-sans">
+			{/* Nav container */}
+				<div className="container flex_between items-center font-sans">
 					{/* logo and name */}
 					<Link to="/">
 						<span className={`flex items-center gap-2 md:gap-3`}>
@@ -191,7 +196,7 @@ const Navbar = () => {
 						))}
 					</ul>
 
-					{/* icon for large screen */}
+					{/* icon for large screen: favorite, cart and product button */}
 					<div className="hidden lg:flex_center gap-5">
 						<div className="relative">
 							<IoMdHeart
@@ -250,6 +255,8 @@ const Navbar = () => {
 							)}
 						</div>
 					</div>
+					{/* ---------------------------------------- */}
+					{/* Toggle button: for small screen */}
 					<div className="flex mt-[10px] lg:hidden">
 						<button
 							onClick={toggleMenu}
@@ -266,7 +273,7 @@ const Navbar = () => {
 				{/* item for mobile screen */}
 				<div
 					ref={menuRef}
-					className={` flex flex-col lg:hidden  items-center gap-6 py-10 px-4 rounded shadow-2xl z-10 ${
+					className={` flex flex-col lg:hidden  items-center gap-6 py-10 padding_x rounded shadow-2xl z-10 ${
 						isSticky ? "bg-bg_green mt-[85px]" : "bg-bg_green mt-[134px]"
 					} ${
 						isOpen
@@ -274,11 +281,15 @@ const Navbar = () => {
 							: "fixed animation_out"
 					}`}
 				>
+					{/* apply condition here: if not loggedin show login button */}
+
+
 					{/* Profile and name */}
 					<div className="flex flex-col items-center gap-4">
 						<CgProfile className="w-16 h-16 text-gray-400" />
 						<p className="font-reem text-2xl text-subtle_gray"> User Name </p>
 					</div>
+					{/* small screen menu */}
 					{navItems.map(({ link, path }) => (
 						<NavLink
 							className={({ isActive, isPending }) =>
@@ -298,40 +309,37 @@ const Navbar = () => {
 					))}
 				</div>
 			</nav>
+			{/* ---------------------------------------- */}
+			{/* small screen: buttons for cart and fav items */}
 			{/* use condition: is cart and fav is empty hide it */}
 
 			<div className="relative z-50">
-			<div
-				className={`absolute mt-[100px] right-2 delay-150 ${
-					isSticky ? "slider_in" : "slider_out"
-				} lg:hidden ]`}
-			>
-				<MobileCartMenu profile={toggleFav} cart={toggleCart}/>
-			</div>
-			{isFav ? (
-				<span
-					ref={favRef}
-					className="absolute  mt-9 right-0 animation_in"
+				<div
+					className={`absolute mt-[100px] right-2 delay-150 ${
+						isSticky ? "slider_in" : "slider_out"
+					} lg:hidden ]`}
 				>
-					{" "}
-					<Favoritenav setIsFav={setIsFav} close={toggleFav} />{" "}
-				</span>
-			) : (
-				<span className="absolute animation_out duration-300 "> </span>
-			)}
-			{isCart ? (
-				<span
-					ref={cartRef}
-					className="absolute  mt-9 right-0 slider_in"
-				>
-					{" "}
-					<Cart close={toggleCart} />{" "}
-				</span>
-			) : (
-				<span className="absolute slider_out "> </span>
-			)}
-
+				{/* ---------------Import component and pass function---------- */}
+					<MobileCartMenu profile={toggleFav} cart={toggleCart} />
+				</div>
+				{isFav ? (
+					<span ref={favRef} className="absolute lg:hidden  mt-9 right-0 animation_in">
+						{" "}
+						<Favoritenav setIsFav={setIsFav} close={toggleFav} />{" "}
+					</span>
+				) : (
+					<span className="absolute animation_out duration-300 "> </span>
+				)}
+				{isCart ? (
+					<span ref={cartRef} className="absolute lg:hidden mt-9 right-0 slider_in">
+						{" "}
+						<Cart close={toggleCart} />{" "}
+					</span>
+				) : (
+					<span className="absolute slider_out "> </span>
+				)}
 			</div>
+			
 		</header>
 	);
 };
