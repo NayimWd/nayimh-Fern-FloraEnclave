@@ -9,7 +9,7 @@ import { ErrorToast, SuccessToast, isEmail, isEmpty, isPassword } from '../ui/he
 
 const Registration = () => {
 // states for hold and store data
-const [storeData, setStoreData] = useState({});
+
 const [inputData, setInputData] = useState({
 	name: "",
 	email: "",
@@ -30,7 +30,7 @@ const handleChange = (e) => {
 		e.preventDefault();
 		// store form data to state
 		const formData = {...inputData};
-		setStoreData(formData)
+		
 		// form validatoin
 		let name = inputData.name;
 		let email = inputData.email;
@@ -57,9 +57,9 @@ const handleChange = (e) => {
 	
 	};
   return (
-    <div className="container flex items-center justify-center min-h-screen w-full bg-white_clr">
+    <div className="container flex items-center justify-center min-h-screen w-full ">
 			{/*/ container */}
-			<div className="flex bg-creamy_white  rounded-md">
+			<div className="flex bg-white_clr  rounded-md">
 				{/* form */}
 				<div className="w-full md:w-1/2 flex flex-col justify-center items-center ">
 					<div className="w-full xsm:w-[404px]  px-4 xsm:px-8 py-[50px]  md:py-14">
@@ -100,7 +100,7 @@ const handleChange = (e) => {
 							<div className="flex justify-between -mt-2 mb-4 px-1 text-sm text-subtle_gray">
 								<span className="flex gap-2">
 									<input className="accent-dark_green cursor-pointer" 
-									onClick={handleChange}
+									onChange={handleChange}
 									name="check"
 									type="checkbox" 
 									

@@ -1,23 +1,25 @@
 import { Outlet } from "react-router-dom";
 import { Toaster } from "react-hot-toast";
 import FullScreenLoader from "./ui/loader/FullScreenLoader";
-import { Suspense, useState } from "react";
-import ComponentLoader from "./ui/loader/ComponentLoader";
+import {  useEffect, useState } from "react";
+
 
 
 function App() {
 	// full screen loader
-	const [loading, setLoading] = useState(true);
+	const [loading, setLoading] = useState(false);
 
-	const loader = document.querySelectorAll(".loader");
-	// let loadingPage = window.onload;
-	if (loader) {
+
+	let pageLoading = window.onload;
+
+	useEffect(()=>{
+		setLoading(true);
 		setTimeout(() => {
-			
-			setLoading(false);
-		}, 100);
-		// loadingPage
-	}
+			setLoading(false)
+		}, pageLoading);
+	},[])
+
+
 
 	return !loading ? (
 		

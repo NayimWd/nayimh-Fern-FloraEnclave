@@ -43,7 +43,7 @@ const Hero = () => {
 								alt="tree"
 							/>
 							<span className="absolute  flex-col justify-end items-start  p-3 sm:p-5 md:p-3 lg:p-6 gap-4 overlay">
-								<h1 className="font-lato text-white text-3xl md:text-xl lg:text-3xl ">
+								<h1 className="font-lato text-white text-3xl md:text-xl lg:text-2xl ">
 									Anthurium Flower
 								</h1>
 								<p className="font-lato text-white">
@@ -62,7 +62,7 @@ const Hero = () => {
 								alt="tree"
 							/>
 							<span className="absolute  flex-col justify-end items-start  p-3 sm:p-5 md:p-3 lg:p-6 gap-4 overlay">
-								<h1 className="font-lato text-white text-3xl md:text-xl lg:text-3xl ">
+								<h1 className="font-lato text-white text-3xl md:text-xl lg:text-2xl ">
 									Anthurium Flower
 								</h1>
 								<p className="font-lato text-white">
@@ -77,7 +77,7 @@ const Hero = () => {
 					</div>
 					<div className=" w-full xl:w-[60%] h-full relative overflow-hidden">
 						<img
-							className="w-full object-cover object-center h-1/2 md:h-full cursor-pointer rounded-md"
+							className="w-full object-cover object-center  md:h-full cursor-pointer rounded-md "
 							src={img3}
 							alt="tree"
 						/>

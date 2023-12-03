@@ -56,9 +56,9 @@ const Login = () => {
 	};
 
 	return (
-		<div className="container flex items-center justify-center min-h-screen w-full bg-white_clr">
+		<div className="container flex items-center justify-center min-h-screen w-full ">
 			{/*/ container */}
-			<div className="flex bg-creamy_white max-h-[750px] rounded-md">
+			<div className="flex bg-white_clr max-h-[750px] rounded-md">
 				{/* form */}
 				<div className="w-full md:w-1/2 flex flex-col justify-center items-center ">
 					<div className="w-full xsm:w-[404px]  px-4 xsm:px-8 py-[50px]  md:py-14">
@@ -89,8 +89,12 @@ const Login = () => {
 
 							<div className="flex justify-between -mt-2 mb-4 px-1 text-sm text-subtle_gray">
 								<span className="flex gap-2">
-									<input className="accent-dark_green cursor-pointer" type="checkbox" onClick={handleChange}
-									name="check" />{" "}
+									<input className="accent-dark_green cursor-pointer" type="checkbox"
+									
+									name="check" 
+									onChange={handleChange}
+									/>{" "}
+									
 									<p>remember me</p>
 								</span>
 								<span className="font-bold cursor-pointer hover:text-dark_green"> forget password </span>

@@ -1,4 +1,8 @@
-import React, { useEffect, useLayoutEffect, useRef, useState } from "react";
+import React, {
+	useEffect,
+	useRef,
+	useState,
+} from "react";
 import { Link, NavLink } from "react-router-dom";
 import logo from "../assets/image/plantLogo.svg";
 import cart from "../assets/icon/cart.png";
@@ -37,17 +41,20 @@ const Navbar = () => {
 		setIsFav(!isFav);
 		setIsCart(false);
 		setIsProfile(false);
+		
 	};
 	const toggleCart = () => {
 		setIsCart(!isCart);
 		setIsFav(false);
 		setIsProfile(false);
+	
 	};
 
 	const toggleProfile = () => {
 		setIsProfile(!isProfile);
 		setIsFav(false);
 		setIsCart(false);
+	
 	};
 
 	// -------------------------------------------------- //
@@ -60,21 +67,20 @@ const Navbar = () => {
 	// function
 	useEffect(() => {
 		// close menu outside
-
 		let menuhandler = (e) => {
-			if (!menuRef.current.contains(e.target)) {
+			if (!menuRef.current?.contains(e.target)) {
 				setIsOpen(false);
-			}
+			} 
+			
 		};
+
 		document.addEventListener("mousedown", menuhandler);
 	}, []);
 
-	let id = Date.now();
-
 	// sticky on scroll function
-	useLayoutEffect(() => {
+	useEffect(() => {
 		const handleScroll = () => {
-			if (window.scrollY > 500) {
+			if (window.scrollY > 300) {
 				setIsSticky(true);
 			} else {
 				setIsSticky(false);
@@ -103,7 +109,7 @@ const Navbar = () => {
 		<header className="fixed  w-[100vw] top-0 left-0 -right-[1px] h-16 z-10">
 			{/* ---------------------------------------- */}
 			{/* position above the navbar contact info large screen */}
-			 <meta name="description" content="Home"/>
+			<meta name="description" content="Home" />
 			<div className={`${isSticky ? "hidden" : "block"}`}>
 				<div
 					className={`hidden  sm:flex justify-center w-full h-12  items-center bg-bg_green border-b-2 border-dark_green padding_x overflow-x-hidden `}
@@ -158,8 +164,8 @@ const Navbar = () => {
 						: "bg-bg_green   "
 				}`}
 			>
-			{/* Nav container */}
-				<div className="container flex_between items-center font-sans">
+				{/* Nav container */}
+				<div className=" flex_between items-center font-sans padding_x">
 					{/* logo and name */}
 					<Link to="/">
 						<span className={`flex items-center gap-2 md:gap-3`}>
@@ -200,16 +206,17 @@ const Navbar = () => {
 					<div className="hidden lg:flex_center gap-5">
 						<div className="relative">
 							<IoMdHeart
+								
 								onClick={toggleFav}
 								className="w-6 h-6 cursor-pointer hover:scale-110 text-red-500 delay-200 ease-in"
 							/>
 							{isFav ? (
 								<span
-									ref={favRef}
-									className="absolute  mt-9 -ml-[220px] animation_in"
+								ref={favRef}
+									className="absolute  mt-8 -ml-[138px] animation_in"
 								>
 									{" "}
-									<Favoritenav setIsFav={setIsFav} close={toggleFav} />{" "}
+									<Favoritenav  close={toggleFav} />{" "}
 								</span>
 							) : (
 								<span className="absolute animation_out duration-300 "> </span>
@@ -217,7 +224,7 @@ const Navbar = () => {
 						</div>
 						<div className="relative ">
 							<img
-								className="cursor-pointer hover:scale-110 delay-200 ease-in"
+								className="cursor-pointer w-5 h-5 hover:scale-110 delay-200 ease-in"
 								onClick={toggleCart}
 								src={cart}
 								alt="cart"
@@ -226,7 +233,7 @@ const Navbar = () => {
 							{isCart ? (
 								<span
 									ref={cartRef}
-									className="absolute  mt-9 -ml-[220px] slider_in"
+									className="absolute  mt-8 -ml-[180px] slider_in"
 								>
 									{" "}
 									<Cart close={toggleCart} />{" "}
@@ -238,14 +245,14 @@ const Navbar = () => {
 						<div className="relative">
 							<img
 								onClick={toggleProfile}
-								className="cursor-pointer hover:scale-110 delay-200 ease-in"
+								className="cursor-pointer w-5 h-5 hover:scale-110 delay-200 ease-in"
 								src={user}
 								alt="cart"
 							/>
 							{isProfile ? (
 								<span
 									ref={profileRef}
-									className="absolute  mt-9 -ml-[260px] slider_in"
+									className="absolute  mt-8 -ml-[222px] slider_in"
 								>
 									{" "}
 									<NavProfile close={toggleProfile} />{" "}
@@ -283,7 +290,6 @@ const Navbar = () => {
 				>
 					{/* apply condition here: if not loggedin show login button */}
 
-
 					{/* Profile and name */}
 					<div className="flex flex-col items-center gap-4">
 						<CgProfile className="w-16 h-16 text-gray-400" />
@@ -319,19 +325,25 @@ const Navbar = () => {
 						isSticky ? "slider_in" : "slider_out"
 					} lg:hidden ]`}
 				>
-				{/* ---------------Import component and pass function---------- */}
+					{/* ---------------Import component and pass function---------- */}
 					<MobileCartMenu profile={toggleFav} cart={toggleCart} />
 				</div>
 				{isFav ? (
-					<span ref={favRef} className="absolute lg:hidden  mt-9 right-0 animation_in">
+					<span
+						ref={favRef}
+						className={`absolute lg:hidden  ${isSticky ? "-mt-[87px]" : "-mt-[136px]"} right-0 animation_in`}
+					>
 						{" "}
-						<Favoritenav setIsFav={setIsFav} close={toggleFav} />{" "}
+						<Favoritenav close={toggleFav} />{" "}
 					</span>
 				) : (
 					<span className="absolute animation_out duration-300 "> </span>
 				)}
 				{isCart ? (
-					<span ref={cartRef} className="absolute lg:hidden mt-9 right-0 slider_in">
+					<span
+						ref={cartRef}
+						className={`absolute lg:hidden  ${isSticky ? "-mt-[87px]" : "-mt-[136px]"} right-0 animation_in`}
+					>
 						{" "}
 						<Cart close={toggleCart} />{" "}
 					</span>
@@ -339,7 +351,6 @@ const Navbar = () => {
 					<span className="absolute slider_out "> </span>
 				)}
 			</div>
-			
 		</header>
 	);
 };
