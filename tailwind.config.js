@@ -24,6 +24,7 @@ export default {
 				reem: ["Reem Kufi", "sans-serif"],
 				sans: ["Nunito Sans", "sans-serif"],
 				lato: ["Lato", "sans-serif"],
+				jost: ["Jost", "sans-serif"],
 			},
 			colors: {
 				creamy_white: "#F9F5F0",
@@ -44,12 +45,12 @@ export default {
 				yellow: "#FFD54F",
 			},
 			backgroundImage: {
-				heroBg: "url('./src/assets/image/banner1.jpg')",
+				heroBg: "url('./src/assets/image/s6.jpg')",
 				bannerBg: "url('./src/assets/image/psBanner.jpg')",
 				loginBg: "url('./src/assets/image/psformbg.jpg')",
 				logBg: "url('./src/assets/image/logimg.png')",
-				footerBg: "url('./src/assets/image/psfooter.jpg')",
-				NotFoundBg: "url('./src/assets/image/psnotFound.jpg')"
+			
+			
 			}
 		},
 	},

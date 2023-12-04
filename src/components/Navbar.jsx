@@ -1,4 +1,4 @@
-import React, {
+import {
 	useEffect,
 	useRef,
 	useState,
@@ -9,8 +9,9 @@ import cart from "../assets/icon/cart.png";
 import user from "../assets/icon/userIcon.png";
 import { CiMenuFries } from "react-icons/ci";
 import { MdOutlineClose, MdLocationOn } from "react-icons/md";
-import { IoMdHeart } from "react-icons/io";
+import { CiHeart } from "react-icons/ci";
 import { CgProfile } from "react-icons/cg";
+
 import {
 	FaPhone,
 	FaFacebook,
@@ -165,7 +166,7 @@ const Navbar = () => {
 				}`}
 			>
 				{/* Nav container */}
-				<div className=" flex_between items-center font-sans padding_x">
+				<div className="container flex_between items-center font-sans padding_x">
 					{/* logo and name */}
 					<Link to="/">
 						<span className={`flex items-center gap-2 md:gap-3`}>
@@ -182,14 +183,14 @@ const Navbar = () => {
 					</Link>
 
 					{/* nav items for large screen */}
-					<ul className="hidden lg:flex space-x-12 ">
+					<span className="hidden lg:flex space-x-12 ">
 						{navItems.map(({ link, path }) => (
 							<NavLink
 								className={({ isActive, isPending }) =>
 									isPending
 										? "text-darker_green"
 										: isActive
-										? "text-green"
+										? "text-[#90F993]"
 										: "text-white_clr"
 								}
 								key={path}
@@ -200,26 +201,26 @@ const Navbar = () => {
 								</p>
 							</NavLink>
 						))}
-					</ul>
+					</span>
 
 					{/* icon for large screen: favorite, cart and product button */}
 					<div className="hidden lg:flex_center gap-5">
 						<div className="relative">
-							<IoMdHeart
+							<CiHeart
 								
 								onClick={toggleFav}
-								className="w-6 h-6 cursor-pointer hover:scale-110 text-red-500 delay-200 ease-in"
+								className="w-6 h-6 cursor-pointer hover:scale-110 text-white delay-200 ease-in"
 							/>
 							{isFav ? (
 								<span
 								ref={favRef}
-									className="absolute  mt-8 -ml-[138px] animation_in"
+									className="fixed top-0 right-0 animation_in"
 								>
 									{" "}
 									<Favoritenav  close={toggleFav} />{" "}
 								</span>
 							) : (
-								<span className="absolute animation_out duration-300 "> </span>
+								<span className="fixed animation_out duration-300 "> </span>
 							)}
 						</div>
 						<div className="relative ">
@@ -233,13 +234,13 @@ const Navbar = () => {
 							{isCart ? (
 								<span
 									ref={cartRef}
-									className="absolute  mt-8 -ml-[180px] slider_in"
+									className="fixed top-0 right-0  slider_in"
 								>
 									{" "}
 									<Cart close={toggleCart} />{" "}
 								</span>
 							) : (
-								<span className="absolute slider_out "> </span>
+								<span className="fixed slider_out "> </span>
 							)}
 						</div>
 						<div className="relative">
@@ -252,7 +253,7 @@ const Navbar = () => {
 							{isProfile ? (
 								<span
 									ref={profileRef}
-									className="absolute  mt-8 -ml-[222px] slider_in"
+									className="absolute  mt-8 -ml-[250px] slider_in"
 								>
 									{" "}
 									<NavProfile close={toggleProfile} />{" "}
@@ -268,6 +269,7 @@ const Navbar = () => {
 						<button
 							onClick={toggleMenu}
 							className="focus:outline-none focus:text-darker_green cursor-pointer p-1 bg-darker_green rounded"
+							aria-label="toggle" alt="close"
 						>
 							{isOpen ? (
 								<MdOutlineClose className="w-6 h-6 text-white_clr" />
@@ -302,7 +304,7 @@ const Navbar = () => {
 								isPending
 									? "text-darker_green"
 									: isActive
-									? "text-green"
+									? "text-[#90F993]"
 									: "text-white_clr"
 							}
 							key={path}

@@ -1,4 +1,4 @@
-import React from 'react';
+
 import { IoMdHeart } from "react-icons/io";
 import { MdOutlineShoppingCart } from "react-icons/md";
 

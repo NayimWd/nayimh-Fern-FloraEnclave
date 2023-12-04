@@ -1,7 +1,7 @@
 import React from "react";
 import img1 from "../assets/image/hero1.png";
 import img2 from "../assets/image/hero2.png";
-import img3 from "../assets/image/hero3.png";
+import img3 from "../assets/image/s6.jpg";
 
 import { FaArrowRightLong } from "react-icons/fa6";
 
@@ -35,7 +35,7 @@ const Hero = () => {
 				</div>
 				{/* for images */}
 				<div className="flex  items-center justify-start w-full h-full md:w-1/2  gap-[5px]">
-					<div className="hidden xl:flex flex-col gap-[5px]  w-[40%] h-full">
+					{/*<div className="hidden xl:flex flex-col gap-[5px]  w-[40%] h-full">
 						<div className="relative ">
 							<img
 								className="object-cover bg-center w-full h-1/2 cursor-pointer rounded-md"
@@ -74,8 +74,8 @@ const Hero = () => {
 								</button>
 							</span>
 						</div>
-					</div>
-					<div className=" w-full xl:w-[60%] h-full relative overflow-hidden">
+	</div>*/}
+					<div className=" w-full  h-[400px] relative overflow-hidden">
 						<img
 							className="w-full object-cover object-center  md:h-full cursor-pointer rounded-md "
 							src={img3}

@@ -37,11 +37,15 @@
     }
 
     .btn_animation-top {
-      @apply block transition duration-300 hover:bg-left-top 
+      @apply block transition duration-500 delay-75 hover:bg-left-top 
     }
 
     .overlay {
       @apply h-full w-full overflow-hidden bg-dark_gray/30 flex  -bottom-32  hover:bottom-0 left-0 opacity-0 hover:opacity-100 cursor-pointer transition-all duration-300 
+    }
+
+    .cartHover {
+      @apply h-full w-full overflow-hidden  -bottom-24 hover:bottom-0 left-0 opacity-0 hover:opacity-100  transition-all duration-300 
     }
 }
 

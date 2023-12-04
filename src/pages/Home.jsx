@@ -1,21 +1,22 @@
-import React, { lazy } from 'react'
-import Navbar from '../components/Navbar'
-import Hero from '../components/Hero';
+import Navbar from "../components/Navbar";
 
-
+import HeroSection from "../components/HeroSection";
+import PromotionalCards from "../components/PromotionalCards";
+// import BestSeller from "../components/BestSeller";
+import { lazy,  } from "react";
+const BestSeller = lazy(()=>import("../components/BestSeller"))
 
 const Home = () => {
-  return (
-  
-    <div> 
-   
-   
-  <Navbar/>
-    <Hero/>
-    
-    <div className='h-[200vh]'></div>
-    </div>
-  )
-}
+	return (
+		<div>
+			<Navbar />
 
-export default Home
+			<HeroSection />
+      <PromotionalCards/>
+      
+			<BestSeller/>
+		</div>
+	);
+};
+
+export default Home;

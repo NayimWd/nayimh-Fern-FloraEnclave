@@ -16,7 +16,7 @@ function App() {
 		setLoading(true);
 		setTimeout(() => {
 			setLoading(false)
-		}, pageLoading);
+		}, 100);
 	},[])
 
 
