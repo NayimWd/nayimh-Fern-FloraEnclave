@@ -91,14 +91,14 @@ const Footer = () => {
 									/>
 									<div className=" font-jost">
 										<span>
-										<p className="leading-7 text-darker_green">
-											{" "}
-											9:30 AM to 7:30 PM{" "}
-										</p>
-										<h1 className="leading-8 traking-[0.5px] text-darker_green">
-											{" "}
-											+880 1743-44 7070{" "}
-										</h1>
+											<p className="leading-7 text-darker_green">
+												{" "}
+												9:30 AM to 7:30 PM{" "}
+											</p>
+											<h1 className="leading-8 traking-[0.5px] text-darker_green">
+												{" "}
+												+880 1743-44 7070{" "}
+											</h1>
 										</span>
 									</div>
 								</div>

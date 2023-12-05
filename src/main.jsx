@@ -1,4 +1,4 @@
-import React, {lazy, Suspense} from "react";
+import React, { lazy, Suspense } from "react";
 import ReactDOM from "react-dom/client";
 import App from "./App.jsx";
 import "./index.css";
@@ -13,15 +13,13 @@ import {
 } from "react-router-dom";
 import DoadLoader from "./ui/loader/DoadLoader.jsx";
 import Home from "./pages/Home.jsx";
-const HomePage = lazy(()=> import("./pages/Home.jsx"))
-const Products = lazy(()=>import("./pages/Products.jsx"))
-const About = lazy(()=> import("./pages/About.jsx"))
-const Layout = lazy(()=> import("./pages/Dashboard/Layout.jsx"))
-const Contact = lazy(()=> import("./pages/Contact.jsx"));
-const LazyLogin = lazy(()=> import("./components/Login.jsx"))
-const LazySignUp = lazy(()=> import("./components/Registration.jsx"));
-
-
+const HomePage = lazy(() => import("./pages/Home.jsx"));
+const Products = lazy(() => import("./pages/Products.jsx"));
+const About = lazy(() => import("./pages/About.jsx"));
+const Layout = lazy(() => import("./pages/Dashboard/Layout.jsx"));
+const Contact = lazy(() => import("./pages/Contact.jsx"));
+const LazyLogin = lazy(() => import("./components/Login.jsx"));
+const LazySignUp = lazy(() => import("./components/Registration.jsx"));
 
 {
 	/* ---- OnBlur Title set ---- */
@@ -30,8 +28,6 @@ let docTitle = document.title;
 window.addEventListener("blur", () => {
 	document.title = "We are waiting! ❤️";
 });
-
-
 
 window.addEventListener("focus", () => {
 	document.title = docTitle;
@@ -42,20 +38,16 @@ window.addEventListener("focus", () => {
 // Router setup
 const router = createBrowserRouter(
 	createRoutesFromElements(
-		
 		<Route path="/" element={<App />}>
-		<Route index={true} path="/" element={<HomePage/>}/>
-		<Route  path="/products" element={<Products/>}/>
-		<Route  path="/about" element={<About/>}/>
-		<Route  path="/contact" element={<Contact/>}/>
-		{/* dashboard*/}
-		<Route path="/dashboard" element={<Layout/>}>
-		
+			<Route index={true} path="/" element={<HomePage />} />
+			<Route path="/products" element={<Products />} />
+			<Route path="/about" element={<About />} />
+			<Route path="/contact" element={<Contact />} />
+			{/* dashboard*/}
+			<Route path="/dashboard" element={<Layout />}></Route>
+			<Route path="/signin" element={<LazyLogin />} />
+			<Route path="/signup" element={<LazySignUp />} />
 		</Route>
-      <Route path="/signin" element={<LazyLogin/>}/>
-      <Route path="/signup" element={<LazySignUp/>}/>
-	  </Route>
-	  
 	)
 );
 
@@ -64,11 +56,8 @@ const router = createBrowserRouter(
 }
 ReactDOM.createRoot(document.getElementById("root")).render(
 	<React.StrictMode>
-	<Suspense fallback={<DoadLoader/>}>
-		
-		
-		<RouterProvider router={router} />
-		
+		<Suspense fallback={<DoadLoader />}>
+			<RouterProvider router={router} />
 		</Suspense>
 	</React.StrictMode>
 );
