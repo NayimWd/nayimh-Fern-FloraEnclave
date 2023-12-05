@@ -20,13 +20,13 @@ const DealsCard = ({ img, title, price, desc }) => {
 						<button className="flex  gap-1 border py-2 px-4 items-center text-darker_green hover:bg-bg_green hover:text-white text-sm font-medium rounded-sm btn_amination">
 							<IoCartOutline className="w-5" /> ADD TO CART{" "}
 						</button>
-						<span>
+						<span data-tooltip="View" data-flow="top">
 							<button className="py-2 px-3 items-center border text-darker_green hover:bg-bg_green hover:text-white text-sm font-medium rounded-sm btn_amination" aria-label="view">
 								{" "}
 								<CiSearch className="w-5" />{" "}
 							</button>
 						</span>
-						<span>
+						<span data-tooltip="Wish List" data-flow="top">
 							<button className="py-2 px-3 items-center border text-darker_green hover:bg-bg_green hover:text-white text-sm font-medium rounded-sm  btn_amination" aria-label="wishlist">
 								{" "}
 								<CiHeart className="w-5" />{" "}

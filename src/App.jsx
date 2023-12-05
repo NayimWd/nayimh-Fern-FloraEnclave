@@ -1,6 +1,6 @@
 import { Outlet } from "react-router-dom";
 import { Toaster } from "react-hot-toast";
-import FullScreenLoader from "./ui/loader/FullScreenLoader";
+import DoadLoader from "./ui/loader/DoadLoader";
 import { useEffect, useState } from "react";
 
 function App() {
@@ -11,7 +11,7 @@ function App() {
 		setLoading(true);
 		setTimeout(() => {
 			setLoading(false);
-		}, 100);
+		}, 200);
 	}, []);
 
 	return !loading ? (
@@ -22,7 +22,7 @@ function App() {
 		</div>
 	) : (
 		<div className="fixed top-0 left-0 w-full h-full ">
-			<FullScreenLoader />
+			<DoadLoader />
 		</div>
 	);
 }

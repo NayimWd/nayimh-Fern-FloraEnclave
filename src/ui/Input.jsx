@@ -71,8 +71,8 @@ const Input = ({ placeHolder, type, label, name, handleChange }) => {
 					className="h-full sm:w-[280px] p-2 w-full rounded-md outline-none bg-white text-darker_green placeholder:text-subtle_gray font-sans"
 					autoComplete="off"
 					onFocus={() => setClick(true)}
-					onBlur={() => setClick(false)}
-					onChange={handleChange}
+					onBlurCapture={() => setClick(false)}
+					onBlur={handleChange}
 				/>
 
 				{/* 

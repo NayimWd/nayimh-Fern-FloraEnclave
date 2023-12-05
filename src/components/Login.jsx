@@ -21,7 +21,6 @@ const Login = () => {
 	const handleChange = (e) => {
 		const name = e.target.name;
 		const value = e.target.value;
-
 		setInputData({...inputData, [name]: value})
 	}
 
@@ -63,7 +62,7 @@ const Login = () => {
 				<div className="w-full md:w-1/2 flex flex-col justify-center items-center ">
 					<div className="w-full xsm:w-[404px]  px-4 xsm:px-8 py-[50px]  md:py-14">
 					<span className="font-sans font-bold text-darker_green text-3xl  md:text-4xl flex_between items-center">
-					<h1>Welcome Back</h1> <Link to="/"> <TiHome className='w-9 cursor-pointer'/> </Link>
+					<h1>Welcome Back</h1> <Link to="/" title="home"> <TiHome className='w-9 cursor-pointer'/> </Link>
 					</span>
 						<p className="text-darker_green text-[16px] sm:text-[18px] mt-1 font-sans">
 							Enter your Credentials to access your account
@@ -87,10 +86,10 @@ const Login = () => {
 								handleChange={handleChange}
 							/>
 
-							<div className="flex justify-between -mt-2 mb-4 px-1 text-sm text-subtle_gray">
+							<div className="flex justify-between -mt-2 mb-4 px-1 text-sm text-darker_green">
 								<span className="flex gap-2">
 									<input className="accent-dark_green cursor-pointer" type="checkbox"
-									
+									aria-label="checkbox"
 									name="check" 
 									onChange={handleChange}
 									/>{" "}
@@ -116,12 +115,12 @@ const Login = () => {
 						{/* sign in button for google & fb */}
 						<div className="w-full flex justify-between gap-4 mb-8">
 							{/* Google */}
-							<div className="flex gap-2 xsm:gap-3 items-center justify-center h-12 w-1/2 bg-subtle_gray  cursor-pointer rounded-md">
+							<div className="flex gap-2 xsm:gap-3 items-center justify-center h-12 w-1/2 bg-white  cursor-pointer rounded-md">
 								<FcGoogle className="w-6" />
 								<p className="font-bold text-xl text-darker_green">Google</p>
 							</div>
 							{/* fb */}
-							<div className="flex gap-2 xsm:gap-3 items-center justify-center h-12 w-1/2 bg-subtle_gray  cursor-pointer rounded-md">
+							<div className="flex gap-2 xsm:gap-3 items-center justify-center h-12 w-1/2 bg-white  cursor-pointer rounded-md">
 								<FaFacebook className="w-6" />
 								<p className="font-bold text-xl text-darker_green">Facebook</p>
 							</div>

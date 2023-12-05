@@ -43,7 +43,7 @@ export default {
 				yellow: "#FFD54F",
 			},
 			backgroundImage: {
-				heroBg: "url('./src/assets/image/s6.jpg')",
+				heroBg: "url('./src/assets/image/s6.webp')",
 				bannerBg: "url('./src/assets/image/psBanner.jpg')",
 				loginBg: "url('./src/assets/image/psformbg.jpg')",
 				logBg: "url('./src/assets/image/logimg.png')",

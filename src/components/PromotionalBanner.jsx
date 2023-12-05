@@ -1,4 +1,4 @@
-import bannerImg from "../assets/image/proposter1.png"
+import bannerImg from "../assets/image/proposterw.webp"
 const PromotionalBanner = () => {
   return (
     <section className="w-full section_p-y md:mt-16 lg:mt-24">
@@ -10,7 +10,7 @@ const PromotionalBanner = () => {
                     <p> Morbi eget congue lectus. Donec eleifend ultricies urna et euismod. Sed consectetur tellus eget odio aliquet, vel vestibulum tellus sollicitudin. Morbi maximus metus eu eros tincidunt, vitae mollis ante imperdiet. </p>
                 </div>
                 <div className="flex justify-center items-center w-full md:w-1/2"> 
-                    <img className="w-full lg:w-[90%] h-full object-cover object-center md:-mt-40 lg:-mt-44" src={bannerImg} alt="banner" loading="lazy" />
+                    <img className="w-full lg:w-[90%] h-full object-cover object-center md:-mt-40 lg:-mt-48" src={bannerImg} alt="banner" loading="lazy" />
                 </div>
             </div>
     </div>

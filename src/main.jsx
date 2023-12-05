@@ -11,8 +11,9 @@ import {
 	createBrowserRouter,
 	createRoutesFromElements,
 } from "react-router-dom";
+import DoadLoader from "./ui/loader/DoadLoader.jsx";
 import Home from "./pages/Home.jsx";
-import ComponentLoader from "./ui/loader/ComponentLoader.jsx";
+const HomePage = lazy(()=> import("./pages/Home.jsx"))
 const Products = lazy(()=>import("./pages/Products.jsx"))
 const About = lazy(()=> import("./pages/About.jsx"))
 const Layout = lazy(()=> import("./pages/Dashboard/Layout.jsx"))
@@ -43,7 +44,7 @@ const router = createBrowserRouter(
 	createRoutesFromElements(
 		
 		<Route path="/" element={<App />}>
-		<Route index={true} path="/" element={<Home/>}/>
+		<Route index={true} path="/" element={<HomePage/>}/>
 		<Route  path="/products" element={<Products/>}/>
 		<Route  path="/about" element={<About/>}/>
 		<Route  path="/contact" element={<Contact/>}/>
@@ -63,7 +64,7 @@ const router = createBrowserRouter(
 }
 ReactDOM.createRoot(document.getElementById("root")).render(
 	<React.StrictMode>
-	<Suspense fallback={<ComponentLoader/>}>
+	<Suspense fallback={<DoadLoader/>}>
 		
 		
 		<RouterProvider router={router} />
