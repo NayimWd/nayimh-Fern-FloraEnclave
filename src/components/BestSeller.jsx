@@ -13,7 +13,7 @@ import BestSellercard from "./ui/BestSellercard";
 
 const BestSeller = () => {
 	return (
-		<section className="w-full mb-48">
+		<section className="w-full">
 			<div className="container flex flex-col items-center padding_x">
 				<h1 className="text-center font-jost text-black text-2xl md:text-3xl font-semibold leading-10 tracking-wider">
 					{" "}

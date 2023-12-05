@@ -1,73 +1,80 @@
-import React, { useState } from 'react';
+import React, { useState } from "react";
 import Input from "../ui/Input";
 import loginBg from "../assets/image/loginImg.png";
 import { FcGoogle } from "react-icons/fc";
 import { FaFacebook } from "react-icons/fa";
 import { TiHome } from "react-icons/ti";
 import { Link, useNavigate } from "react-router-dom";
-import { ErrorToast, SuccessToast, isEmail, isEmpty, isPassword } from '../ui/helper';
+import {
+	ErrorToast,
+	SuccessToast,
+	isEmail,
+	isEmpty,
+	isPassword,
+} from "../ui/helper";
 
 const Registration = () => {
-// states for hold and store data
+	// states for hold and store data
 
-const [inputData, setInputData] = useState({
-	name: "",
-	email: "",
-	password: "",
-	check: ""
-});
+	const [inputData, setInputData] = useState({
+		name: "",
+		email: "",
+		password: "",
+		check: "",
+	});
 
-const navigate = useNavigate();
+	const navigate = useNavigate();
 
-// onchange handler
-const handleChange = (e) => {
-	const name = e.target.name;
-	const value = e.target.value;
+	// onchange handler
+	const handleChange = (e) => {
+		const name = e.target.name;
+		const value = e.target.value;
 
-	setInputData({...inputData, [name]: value})
-}
-    const handleSubmit = (e) => {
+		setInputData({ ...inputData, [name]: value });
+	};
+	const handleSubmit = (e) => {
 		e.preventDefault();
 		// store form data to state
-		const formData = {...inputData};
-		
+		const formData = { ...inputData };
+
 		// form validatoin
 		let name = inputData.name;
 		let email = inputData.email;
 		let password = inputData.password;
 		let check = inputData.check;
 
-		if(isEmpty(name)){
-			ErrorToast("Enter your name")
-		} else if(!isEmail(email)){
+		if (isEmpty(name)) {
+			ErrorToast("Enter your name");
+		} else if (!isEmail(email)) {
 			ErrorToast("Enter a valid email");
-		} else if(!isPassword(password)){
-			ErrorToast("Invalid Password! read Instruction")
-		} else if(isEmpty(check)){
-			ErrorToast("Fill the checkbox")
-		} 
-		else{
-			SuccessToast("Registration success!")
-			console.log(formData)
+		} else if (!isPassword(password)) {
+			ErrorToast("Invalid Password! read Instruction");
+		} else if (isEmpty(check)) {
+			ErrorToast("Fill the checkbox");
+		} else {
+			SuccessToast("Registration success!");
+			console.log(formData);
 			// navigate("/signin")
-			setInputData({email: "", password: "", check: ""})
+			setInputData({ email: "", password: "", check: "" });
 			e.target.reset();
 		}
-
-	
 	};
-  return (
-    <div className="container flex items-center justify-center min-h-screen w-full ">
+	return (
+		<div className="container flex items-center justify-center min-h-screen w-full ">
 			{/*/ container */}
-			<div className="flex bg-white_clr  rounded-md">
+			<div className="flex bg-creamy_white  rounded-md">
 				{/* form */}
 				<div className="w-full md:w-1/2 flex flex-col justify-center items-center ">
 					<div className="w-full xsm:w-[404px]  px-4 xsm:px-8 py-[50px]  md:py-14">
 						<span className="font-sans font-bold text-darker_green text-3xl  md:text-4xl flex_between items-center">
-						<h1>Get Started Now</h1> <Link to="/"> <TiHome className='w-9 cursor-pointer'/> </Link>
+							<h1>Get Started Now</h1>{" "}
+							<Link to="/">
+								{" "}
+								<TiHome className="w-9 cursor-pointer" />{" "}
+							</Link>
 						</span>
 						<p className="text-darker_green text-[16px] sm:text-[18px] mt-1 font-sans ">
-						Enter your Information to create your account
+							Enter your Information to create your account
 						</p>
 						<form onSubmit={(e) => handleSubmit(e)} className="mt-7">
 							<Input
@@ -75,7 +82,7 @@ const handleChange = (e) => {
 								type={"text"}
 								placeHolder={"Enter Your Name"}
 								label={"name"}
-                                value={inputData.name}
+								value={inputData.name}
 								handleChange={handleChange}
 							/>
 
@@ -99,17 +106,18 @@ const handleChange = (e) => {
 
 							<div className="flex justify-between -mt-2 mb-4 px-1 text-sm text-subtle_gray">
 								<span className="flex gap-2">
-									<input className="accent-dark_green cursor-pointer" 
-									onChange={handleChange}
-									name="check"
-									type="checkbox" 
-									
+									<input
+										className="accent-dark_green cursor-pointer"
+										onChange={handleChange}
+										name="check"
+										type="checkbox"
 									/>{" "}
-									
-									
 									<p>remember me</p>
 								</span>
-								<span className="font-bold cursor-pointer hover:text-dark_green"> forget password </span>
+								<span className="font-bold cursor-pointer hover:text-dark_green">
+									{" "}
+									forget password{" "}
+								</span>
 							</div>
 							{/* Button */}
 							<button className="w-full h-[34px] rounded-md items-center flex justify-center bg-darker_green text-white text-lg py-1">
@@ -148,11 +156,15 @@ const handleChange = (e) => {
 				</div>
 				{/* image */}
 				<div className="hidden md:flex  md:w-1/2 items-center ">
-					<img className="max-h-[750px] w-full object-center object-fill bg-center rounded-md md:h-[646px] lg:h-full" src={loginBg} alt="bg" />
+					<img
+						className="max-h-[750px] w-full object-center object-fill bg-center rounded-md md:h-[646px] lg:h-full"
+						src={loginBg}
+						alt="bg"
+					/>
 				</div>
 			</div>
 		</div>
-  )
-}
+	);
+};
 
-export default Registration
+export default Registration;

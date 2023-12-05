@@ -1,21 +1,22 @@
+import { lazy } from "react";
 import Navbar from "../components/Navbar";
-
 import HeroSection from "../components/HeroSection";
 import PromotionalCards from "../components/PromotionalCards";
-// import BestSeller from "../components/BestSeller";
-import { lazy,  } from "react";
-const BestSeller = lazy(()=>import("../components/BestSeller"))
-
+const BestSeller = lazy(() => import("../components/BestSeller"));
+const PromotionalBanner = lazy(() => import("../components/PromotionalBanner"));
+const PromoCartsecond = lazy(()=>import("../components/PromoCartsecond"));
+const Deal = lazy(()=> import("../components/Deal"));
 const Home = () => {
 	return (
-		<div>
+		<section>
 			<Navbar />
-
 			<HeroSection />
-      <PromotionalCards/>
-      
-			<BestSeller/>
-		</div>
+			<PromotionalCards />
+			<BestSeller />
+			<PromotionalBanner/>
+			<PromoCartsecond/>
+			<Deal/>
+		</section>
 	);
 };
 

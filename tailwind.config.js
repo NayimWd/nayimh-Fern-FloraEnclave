@@ -13,13 +13,11 @@ export default {
 		container: {
 			center: true,
 			padding: {
-				default: "30px"
+				default: "30px",
 			},
 		},
 
-
 		extend: {
-			
 			fontFamily: {
 				reem: ["Reem Kufi", "sans-serif"],
 				sans: ["Nunito Sans", "sans-serif"],
@@ -49,21 +47,10 @@ export default {
 				bannerBg: "url('./src/assets/image/psBanner.jpg')",
 				loginBg: "url('./src/assets/image/psformbg.jpg')",
 				logBg: "url('./src/assets/image/logimg.png')",
-			
-			
-			}
+			},
 		},
 	},
 	plugins: [],
 };
 
-// padding: {
-//   default: '10px',
-// xsm: '12px',
-// xs: '14px',
-// sm: '16px',
-// md: '20px',
-// lg: '24px',
-// xl: '28px',
-// xxl: '32px'
-// }
+
