@@ -1,6 +1,11 @@
 const Profile = () => {
   return (
-    <div>Profile</div>
+    <div className="w-full ">
+    <div>
+    Profile
+    
+    </div>
+    </div>
   )
 }
 
