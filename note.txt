@@ -4,21 +4,7 @@ Main Background Color: #F9F5F0 (Creamy White)
 Secondary Background Color (Optional): #F3F3F3 (Light Gray)
 
 -------------------------------------------------------------------
-
-Header and Banner Colors:
-
-Header Background Color: #6BBB6D (Soft Green)
-Header Text Color: #FFFFFF (White)
-Banner Background Color (Optional): #A0AB84 (Subtle Gray-Green)
-Banner Text Color: #FFFFFF (White)
-
--------------------------------------------------------------------
-
-Navigation and Links:
-
-Navigation Links: #333333 (Dark Gray)
-Active Navigation Link: #6BBB6D (Soft Green)
-Hover/Active States (Links/Buttons): #388E3C (Dark Green)
+git remote set-url origin git@github.com:NayimWd/nayimh-Fern-FloraEnclave.git
 
 -------------------------------------------------------------------
 
@@ -130,8 +116,8 @@ Success Messages:
 Success Message Background: #C8E6C9 (Light Green)
 Success Message Text: #4CAF50 (Green)
 
-https://github.com/NayimWd/nayimh-Fern-FloraEnclave
-         
+
+
          
 
 
