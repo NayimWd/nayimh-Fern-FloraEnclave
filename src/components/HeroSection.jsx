@@ -1,6 +1,6 @@
 const HeroSection = () => {
 	return (
-		<section className="w-full h-screen bg-heroBg  object-cover bg-center bg-no-repeat mt-[136px] transition-all delay-200 duration-150 ">
+		<section className="w-full  h-screen bg-heroBg  object-cover bg-center  bg-no-repeat mt-[136px] transition-all delay-200 duration-150 ">
 			<div className="w-full  h-full flex_center flex-col  bg-black/50 bg-cover bg-center gap-6 padding_x section_p-y">
 				<h1 className="text-white w-full text-center font-medium md:font-bold font-reem text-4xl sm:text-5xl md:text-[64px] leading-10 sm:leading-[56px] md:leading-[72px] tracking-[1.5px]">
 					{" "}

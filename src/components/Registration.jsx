@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import Input from "../ui/Input";
-import loginBg from "../assets/image/loginImg.png";
+import loginBg from "../assets/image/loginImg.webp";
 import { FcGoogle } from "react-icons/fc";
 import { FaFacebook } from "react-icons/fa";
 import { TiHome } from "react-icons/ti";
@@ -15,7 +15,6 @@ import {
 
 const Registration = () => {
 	// states for hold and store data
-
 	const [inputData, setInputData] = useState({
 		name: "",
 		email: "",
@@ -60,7 +59,7 @@ const Registration = () => {
 		}
 	};
 	return (
-		<div className="container flex items-center justify-center min-h-screen w-full ">
+		<section className="container flex items-center justify-center min-h-screen w-full ">
 			{/*/ container */}
 			<div className="flex bg-creamy_white  rounded-md">
 				{/* form */}
@@ -104,7 +103,7 @@ const Registration = () => {
 								handleChange={handleChange}
 							/>
 
-							<div className="flex justify-between -mt-2 mb-4 px-1 text-sm text-darker_green">
+							{/*<div className="flex justify-between -mt-2 mb-4 px-1 text-sm text-darker_green">
 								<span className="flex gap-2">
 									<input
 										className="accent-dark_green cursor-pointer"
@@ -119,9 +118,9 @@ const Registration = () => {
 									{" "}
 									forget password{" "}
 								</span>
-							</div>
+	</div>*/}
 							{/* Button */}
-							<button className="w-full h-[34px] rounded-md items-center flex justify-center bg-darker_green text-white text-lg py-1">
+							<button className="w-full mt-6 h-[34px] rounded-md items-center flex justify-center bg-darker_green text-white text-lg py-1">
 								{" "}
 								sign in{" "}
 							</button>
@@ -164,7 +163,7 @@ const Registration = () => {
 					/>
 				</div>
 			</div>
-		</div>
+		</section>
 	);
 };
 

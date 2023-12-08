@@ -1,6 +1,6 @@
-import React, {  useState } from "react";
+import  {  useState } from "react";
 import Input from "../ui/Input";
-import loginBg from "../assets/image/loginImg.png";
+import loginBg from "../assets/image/loginImg.webp";
 import { FcGoogle } from "react-icons/fc";
 import { FaFacebook } from "react-icons/fa";
 import { TiHome } from "react-icons/ti";
@@ -9,7 +9,7 @@ import { ErrorToast, SuccessToast, isEmail, isEmpty, isPassword } from "../ui/he
 
 const Login = () => {
 // states for hold and store data
-	const [storeData, setStoreData] = useState({});
+	// const [storeData, setStoreData] = useState({});
 	const [inputData, setInputData] = useState({
 		email: "",
 		password: "",
@@ -30,7 +30,7 @@ const Login = () => {
 		
 		// storing data to state
 		const formData = {...inputData};
-		setStoreData(formData)
+		// setStoreData(formData)
 		// input validation
 		let email = inputData.email;
 		let password = inputData.password;
@@ -41,7 +41,7 @@ const Login = () => {
 		} else if(!isPassword(password)){
 			ErrorToast("Invalid Password! read Instruction")
 		} else if(isEmpty(check)){
-			ErrorToast("Full the checkbox")
+			ErrorToast("Fill the checkbox")
 		} 
 		else{
 			SuccessToast("login success")
@@ -55,7 +55,7 @@ const Login = () => {
 	};
 
 	return (
-		<div className="container flex items-center justify-center min-h-screen w-full ">
+		<section className="container flex items-center justify-center min-h-screen w-full ">
 			{/*/ container */}
 			<div className="flex bg-creamy_white max-h-[750px] rounded-md">
 				{/* form */}
@@ -96,7 +96,7 @@ const Login = () => {
 									
 									<p>remember me</p>
 								</span>
-								<span className="font-bold cursor-pointer hover:text-dark_green"> forget password </span>
+								<Link to="/ForgetPassword" title="forgetPass" > <p className="font-bold cursor-pointer hover:text-dark_green"> forget password </p></Link>
 							</div>
 							{/* Button */}
 							<button type="submit" className="w-full h-[34px] rounded-md items-center flex justify-center bg-darker_green text-white text-lg py-1">
@@ -138,7 +138,7 @@ const Login = () => {
 					<img className="max-h-[750px]  object-center object-fill rounded-md md:h-[646px] lg:h-full" src={loginBg} alt="bg" />
 				</div>
 			</div>
-		</div>
+		</section>
 	);
 };
 

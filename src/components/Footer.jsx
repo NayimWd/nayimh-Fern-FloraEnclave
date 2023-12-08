@@ -4,7 +4,7 @@ import { IoMdPaperPlane } from "react-icons/io";
 import { CgYoutube, CgFacebook, CgInstagram } from "react-icons/cg";
 const Footer = () => {
 	return (
-		<section className="w-full bg-creamy_white">
+		<section className="w-full bg-[#f5f5f5]">
 			<div className=" flex flex-col border-t-2">
 				{/* footer content */}
 				<div className="container padding_x  w-full grid grid-cols-4   items-center justify-between py-10 gap-5">
@@ -76,7 +76,7 @@ const Footer = () => {
 								</div>
 							</div>
 							{/* 4th col */}
-							<div className="px-10 py-5 col-start-1 col-span-4  lg:border-x sm:w-1/3">
+							<div className="px-10 py-5 col-start-1 col-span-4  lg:border-l sm:w-1/3">
 								<h1 className="font-jost text-lg text-darker_green tracking-wide">
 									{" "}
 									Customer Care{" "}
@@ -84,7 +84,7 @@ const Footer = () => {
 								<hr className="border-b border-darker_green mt-3 sm:mt-5 w-10" />
 								<div className="flex flex-col xsm:flex-row sm:flex-col xl:flex-row items-center gap-5 mt-5 sm:mt-10 font-jost tracking-wide leading-8 text-darker_green">
 									<img
-										className="w-14 h-14 aspect-auto "
+										className="w-[58px] h-[66px] object-cover object-center aspect-[1/1] "
 										src={support}
 										alt="img"
 										loading="lazy"

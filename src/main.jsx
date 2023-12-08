@@ -12,7 +12,6 @@ import {
 	createRoutesFromElements,
 } from "react-router-dom";
 import DoadLoader from "./ui/loader/DoadLoader.jsx";
-import Home from "./pages/Home.jsx";
 const HomePage = lazy(() => import("./pages/Home.jsx"));
 const Products = lazy(() => import("./pages/Products.jsx"));
 const About = lazy(() => import("./pages/About.jsx"));
@@ -20,6 +19,8 @@ const Layout = lazy(() => import("./pages/Dashboard/Layout.jsx"));
 const Contact = lazy(() => import("./pages/Contact.jsx"));
 const LazyLogin = lazy(() => import("./components/Login.jsx"));
 const LazySignUp = lazy(() => import("./components/Registration.jsx"));
+const ForgetPassword = lazy(() => import("./components/ForgetPassword.jsx"));
+const NotFound = lazy(() => import("./pages/NotFound.jsx"));
 
 {
 	/* ---- OnBlur Title set ---- */
@@ -47,6 +48,8 @@ const router = createBrowserRouter(
 			<Route path="/dashboard" element={<Layout />}></Route>
 			<Route path="/signin" element={<LazyLogin />} />
 			<Route path="/signup" element={<LazySignUp />} />
+			<Route path="/ForgetPassword" element={<ForgetPassword />} />
+			<Route path="*" element={<NotFound />} />
 		</Route>
 	)
 );

@@ -11,9 +11,9 @@ const BestSellercard = ({image, title, price}) => {
                   {/* icons for large screens */}
                 <div className="hidden absolute md:flex justify-center items-end cartHover mb-12">
                 <div className="flex  gap-4">
-                <span className=" w-10 h-10 rounded-full" data-tooltip="cart" data-flow="top"><IoCartOutline className="w-10 h-10 bg-white hover:bg-soft_green rounded-full p-2 text-dark_green hover:text-white"/></span>
-                <span className="w-10 h-10 rounded-full" data-tooltip="View" data-flow="top"><CiSearch className="w-10 h-10 hover:bg-soft_green rounded-full p-2 bg-white text-dark_green hover:text-white"/></span>
-                <span className="w-10 h-10 rounded-full" data-tooltip="wishList" data-flow="top"><CiHeart className="w-10 h-10 bg-white hover:bg-soft_green rounded-full p-2 text-dark_green hover:text-white"/></span>
+                <span className=" w-10 h-10 rounded-full" data-tooltip="cart" data-flow="top"><IoCartOutline className="w-10 h-10 bg-white hover:bg-dark_green rounded-sm p-2 text-dark_green hover:text-white"/></span>
+                <span className="w-10 h-10 rounded-full" data-tooltip="View" data-flow="top"><CiSearch className="w-10 h-10 hover:bg-dark_green rounded-sm p-2 bg-white text-dark_green hover:text-white"/></span>
+                <span className="w-10 h-10 rounded-full" data-tooltip="wishList" data-flow="top"><CiHeart className="w-10 h-10 bg-white hover:bg-dark_green rounded-sm p-2 text-dark_green hover:text-white"/></span>
                 </div>
                 </div>
 
@@ -22,9 +22,9 @@ const BestSellercard = ({image, title, price}) => {
               {/* icons for small screens */}
               <div className="absolute top-2 right-2 xsm:top-4 xsm:right-4 sm:top-5 sm:right-5  md:hidden">
                     <div className="flex flex-col gap-1 sm:gap-2">
-                    <span className="w-6 h-6 sm:w-8 sm:h-8 rounded-full" data-tooltip="cart" data-flow="left"><IoCartOutline className="w-6 h-6 sm:w-8 sm:h-8 bg-white hover:bg-soft_green rounded-full p-1 sm:p-2 text-dark_green hover:text-white"/></span>
-                    <span className="w-6 h-6 sm:w-8 sm:h-8 rounded-full" data-tooltip="View" data-flow="left"><CiSearch className="w-6 h-6 sm:w-8 sm:h-8 hover:bg-soft_green rounded-full p-1 sm:p-2 bg-white text-dark_green hover:text-white"/></span>
-                    <span className="w-6 h-6 sm:w-8 sm:h-8 rounded-full" data-tooltip="wishList" data-flow="left"><CiHeart className="w-6 h-6 sm:w-8 sm:h-8 bg-white hover:bg-soft_green rounded-full p-1 sm:p-2 text-dark_green hover:text-white"/></span>
+                    <span className="w-6 h-6 sm:w-8 sm:h-8 rounded-full" data-tooltip="cart" data-flow="left"><IoCartOutline className="w-6 h-6 sm:w-8 sm:h-8 bg-white hover:bg-dark_green rounded-sm p-1 sm:p-2 text-dark_green hover:text-white"/></span>
+                    <span className="w-6 h-6 sm:w-8 sm:h-8 rounded-full" data-tooltip="View" data-flow="left"><CiSearch className="w-6 h-6 sm:w-8 sm:h-8 hover:bg-dark_green rounded-sm p-1 sm:p-2 bg-white text-dark_green hover:text-white"/></span>
+                    <span className="w-6 h-6 sm:w-8 sm:h-8 rounded-full" data-tooltip="wishList" data-flow="left"><CiHeart className="w-6 h-6 sm:w-8 sm:h-8 bg-white hover:bg-dark_green rounded-sm p-1 sm:p-2 text-dark_green hover:text-white"/></span>
                     </div>
                    
               </div>

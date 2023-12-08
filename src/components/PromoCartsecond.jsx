@@ -1,6 +1,6 @@
-import primg from "../assets/image/posterS1p.png";
-import primg1 from "../assets/image/posterS2p.png";
-import primg2 from "../assets/image/posterS3p.png";
+import primg from "../assets/image/posterS1p.webp";
+import primg1 from "../assets/image/posterS2p.webp";
+import primg2 from "../assets/image/posterS3p.webp";
 import PromoCard from "./ui/PromoCard";
 
 const PromoCartsecond = () => {

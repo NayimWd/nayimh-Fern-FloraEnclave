@@ -1,6 +1,6 @@
-import img1 from "../assets/image/poster1.png";
-import img2 from "../assets/image/poster2.png";
-import img3 from "../assets/image/poster3.png";
+import img1 from "../assets/image/poster1.webp";
+import img2 from "../assets/image/poster2.webp";
+import img3 from "../assets/image/poster3.webp";
 import PromotionCard from "./ui/PromotionCard";
 
 const PromotionalCards = () => {

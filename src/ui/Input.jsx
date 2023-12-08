@@ -95,7 +95,7 @@ const Input = ({ placeHolder, type, label, name, handleChange }) => {
 					))}
 			</span>
 			{click && type === "password" ? (
-				<div className="absolute top-10 right-0 bg-soft_green py-1 px-4 rounded-md text-white  shadow-xl">
+				<div className="absolute top-10 right-0 bg-soft_green p-4 rounded-md text-white  shadow-xl z-10">
 					password must contained:
 					<ol>
 						<li>minimum length 8,</li>
