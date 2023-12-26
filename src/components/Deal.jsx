@@ -1,6 +1,6 @@
 import { lazy } from "react";
-import dealImg from "../assets/image/product2.jpg";
-import dealImg1 from "../assets/image/product3.jpg";
+import dealImg from "../assets/image/product2.webp";
+import dealImg1 from "../assets/image/product3.webp";
 const DealsCard = lazy(()=> import("../components/ui/DealsCard"));
 
 
