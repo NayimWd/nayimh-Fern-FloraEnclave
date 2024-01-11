@@ -1,17 +1,15 @@
 import Input from "../ui/Input";
 import loginBg from "../assets/image/loginImg.webp";
-import { TiHome } from "react-icons/ti";
 import { Link, useNavigate } from "react-router-dom";
 import { ErrorToast, SuccessToast, isEmail } from "../ui/helper";
 import { useState } from "react";
 
 const ForgetPassword = () => {
 	// states for hold and store data
-
 	const [inputData, setInputData] = useState({
 		email: "",
 	});
-	const navigate = useNavigate();
+	let navigate = useNavigate();
 
 	// onchange handler
 	const handleChange = (e) => {
@@ -26,7 +24,7 @@ const ForgetPassword = () => {
 
 		// storing data to state
 		const formData = { ...inputData };
-		// setStoreData(formData)
+
 		// input validation
 		let email = inputData.email;
 
@@ -35,7 +33,7 @@ const ForgetPassword = () => {
 		} else {
 			SuccessToast("Email Send");
 			console.log(formData);
-			navigate("/resetpassword");
+			navigate("/EnterOTPCode");
 			// setInputData({email: ""})
 			// e.target.reset();
 		}
@@ -75,13 +73,14 @@ const ForgetPassword = () => {
 						</form>
 
 						<p className="text-center text-lg text-dark_gray font-semibold font-reem cursor-pointer mb-10">
-							Back To Sign In{" "}
-						</p>
-						<p className="text-center text-lg text-dark_gray font-semibold font-reem">
-							Don't have an account?{" "}
-							<span className="text-darker_green font-extrabold text-xl cursor-pointer font-sans">
-								<Link to="/signup"> Sign Up </Link>
-							</span>
+							Back To{" "}
+							<Link
+								className="text-darker_green font-bold text-xl underline"
+								to="/signin"
+							>
+								{" "}
+								Sign In{" "}
+							</Link>{" "}
 						</p>
 					</div>
 				</div>

@@ -20,6 +20,8 @@ const Contact = lazy(() => import("./pages/Contact.jsx"));
 const LazyLogin = lazy(() => import("./components/Login.jsx"));
 const LazySignUp = lazy(() => import("./components/Registration.jsx"));
 const ForgetPassword = lazy(() => import("./components/ForgetPassword.jsx"));
+const EnterCode = lazy(()=>import("./components/ResetPassword.jsx"));
+const ChagnePassword = lazy(()=> import("./components/ChangePassword.jsx"));
 const NotFound = lazy(() => import("./pages/NotFound.jsx"));
 
 {
@@ -44,11 +46,14 @@ const router = createBrowserRouter(
 			<Route path="/products" element={<Products />} />
 			<Route path="/about" element={<About />} />
 			<Route path="/contact" element={<Contact />} />
-			{/* dashboard*/}
+			{/* Dashboard*/}
 			<Route path="/dashboard" element={<Layout />}></Route>
+			{/* Authentication routes*/}
 			<Route path="/signin" element={<LazyLogin />} />
 			<Route path="/signup" element={<LazySignUp />} />
 			<Route path="/ForgetPassword" element={<ForgetPassword />} />
+			<Route path="/EnterOTPCode" element={<EnterCode />} />
+			<Route path="/ChagnePassword" element={<ChagnePassword />} />
 			<Route path="*" element={<NotFound />} />
 		</Route>
 	)

@@ -1,27 +1,19 @@
-import {
-	useEffect,
-	useRef,
-	useState,
-} from "react";
+import { useEffect, useRef, useState } from "react";
 import { Link, NavLink } from "react-router-dom";
 import logo from "../assets/image/plantLogo.svg";
 import cart from "../assets/icon/cart.png";
 import user from "../assets/icon/userIcon.png";
 import { CiMenuFries } from "react-icons/ci";
-import { MdOutlineClose, MdLocationOn } from "react-icons/md";
+import { MdOutlineClose } from "react-icons/md";
 import { CiHeart } from "react-icons/ci";
 import { CgProfile } from "react-icons/cg";
 
-import {
-	FaPhone,
-	FaFacebook,
-	FaInstagramSquare,
-	FaYoutube,
-} from "react-icons/fa";
 import Cart from "./Cart";
 import Favoritenav from "./Favoritenav";
 import NavProfile from "./NavProfile";
 import MobileCartMenu from "./MobileCartMenu";
+import HeadInfo from "./ui/HeadInfo";
+import DotNotification from "./ui/DotNotification";
 
 const Navbar = () => {
 	// state for mobile menu toggle
@@ -42,20 +34,17 @@ const Navbar = () => {
 		setIsFav(!isFav);
 		setIsCart(false);
 		setIsProfile(false);
-		
 	};
 	const toggleCart = () => {
 		setIsCart(!isCart);
 		setIsFav(false);
 		setIsProfile(false);
-	
 	};
 
 	const toggleProfile = () => {
 		setIsProfile(!isProfile);
 		setIsFav(false);
 		setIsCart(false);
-	
 	};
 
 	// -------------------------------------------------- //
@@ -71,8 +60,7 @@ const Navbar = () => {
 		let menuhandler = (e) => {
 			if (!menuRef.current?.contains(e.target)) {
 				setIsOpen(false);
-			} 
-			
+			}
 		};
 
 		document.addEventListener("mousedown", menuhandler);
@@ -112,24 +100,8 @@ const Navbar = () => {
 			{/* position above the navbar contact info large screen */}
 			<meta name="description" content="Home" />
 			<div className={`${isSticky ? "hidden" : "block"}`}>
-				<div
-					className={`hidden  sm:flex justify-center w-full h-12  items-center bg-bg_green border-b-2 border-dark_green padding_x overflow-x-hidden `}
-				>
-					<div className="container flex w-full items-center justify-between gap-10 md:gap-0">
-						<span className="flex_center gap-1">
-							<MdLocationOn className="w-4 h-4 text-white" />
-							<p className="text-white"> Baghopara, Bogura</p>
-						</span>
-						<span className="flex_center gap-1">
-							<FaPhone className="w-4 h-4 text-white" />
-							<p className="text-white">+880 1743 447070</p>
-						</span>
-						<span className="flex_center gap-4">
-							<FaFacebook className="w-6 h-6 text-subtle_gray cursor-pointer hover:scale-110" />
-							<FaInstagramSquare className="w-6 h-6 text-subtle_gray cursor-pointer hover:scale-110" />
-							<FaYoutube className="w-6 h-6 text-subtle_gray cursor-pointer hover:scale-110" />
-						</span>
-					</div>
+				<div className="hidden sm:flex">
+					<HeadInfo />
 				</div>
 			</div>
 			{/* contact info small screen */}
@@ -138,21 +110,7 @@ const Navbar = () => {
 					className={`flex  sm:hidden justify-center w-full h-12  items-center bg-bg_green border-b border-darker_green padding_x overflow-x-hidden `}
 				>
 					<marquee className="sm:hidden">
-						<div className="flex w-full items-center justify-between gap-10 md:gap-0 padding_x">
-							<span className="flex_center gap-1">
-								<MdLocationOn className="w-4 h-4 text-white" />
-								<p className="text-white"> Baghopara, Bogura</p>
-							</span>
-							<span className="flex_center gap-1">
-								<FaPhone className="w-4 h-4 text-white" />
-								<p className="text-white">+880 1743 447070</p>
-							</span>
-							<span className="flex_center gap-4">
-								<FaFacebook className="w-6 h-6 text-subtle_gray cursor-pointer hover:scale-110" />
-								<FaInstagramSquare className="w-6 h-6 text-subtle_gray cursor-pointer hover:scale-110" />
-								<FaYoutube className="w-6 h-6 text-subtle_gray cursor-pointer hover:scale-110" />
-							</span>
-						</div>
+						<HeadInfo />
 					</marquee>
 				</div>
 			</div>
@@ -207,17 +165,16 @@ const Navbar = () => {
 					<div className="hidden lg:flex_center gap-5">
 						<div className="relative">
 							<CiHeart
-								
 								onClick={toggleFav}
 								className="w-6 h-6 cursor-pointer hover:scale-110 text-white delay-200 ease-in"
 							/>
+							<div className="absolute -top-1 -right-[6px] ">
+								<DotNotification/>
+							</div>
 							{isFav ? (
-								<span
-								ref={favRef}
-									className="fixed top-0 right-0 animation_in"
-								>
+								<span ref={favRef} className="fixed top-0 right-0 animation_in">
 									{" "}
-									<Favoritenav  close={toggleFav} />{" "}
+									<Favoritenav close={toggleFav} />{" "}
 								</span>
 							) : (
 								<span className="fixed animation_out duration-300 "> </span>
@@ -230,12 +187,11 @@ const Navbar = () => {
 								src={cart}
 								alt="cart"
 							/>
-
+							<div className="absolute -top-1 -right-2 ">
+								<DotNotification/>
+							</div>
 							{isCart ? (
-								<span
-									ref={cartRef}
-									className="fixed top-0 right-0  slider_in"
-								>
+								<span ref={cartRef} className="fixed top-0 right-0  slider_in">
 									{" "}
 									<Cart close={toggleCart} />{" "}
 								</span>
@@ -269,7 +225,8 @@ const Navbar = () => {
 						<button
 							onClick={toggleMenu}
 							className="focus:outline-none focus:text-darker_green cursor-pointer p-1 bg-darker_green rounded"
-							aria-label="toggle" alt="close"
+							aria-label="toggle"
+							alt="close"
 						>
 							{isOpen ? (
 								<MdOutlineClose className="w-6 h-6 text-white_clr" />
@@ -333,8 +290,11 @@ const Navbar = () => {
 				{isFav ? (
 					<span
 						ref={favRef}
-						className={`absolute lg:hidden  ${isSticky ? "-mt-[87px]" : "-mt-[136px]"} right-0 animation_in`}
+						className={`absolute lg:hidden  ${
+							isSticky ? "-mt-[87px]" : "-mt-[136px]"
+						} right-0 animation_in`}
 					>
+					
 						{" "}
 						<Favoritenav close={toggleFav} />{" "}
 					</span>
@@ -342,9 +302,12 @@ const Navbar = () => {
 					<span className="absolute animation_out duration-300 "> </span>
 				)}
 				{isCart ? (
+					
 					<span
 						ref={cartRef}
-						className={`absolute lg:hidden  ${isSticky ? "-mt-[87px]" : "-mt-[136px]"} right-0 animation_in`}
+						className={`absolute lg:hidden  ${
+							isSticky ? "-mt-[87px]" : "-mt-[136px]"
+						} right-0 animation_in`}
 					>
 						{" "}
 						<Cart close={toggleCart} />{" "}
