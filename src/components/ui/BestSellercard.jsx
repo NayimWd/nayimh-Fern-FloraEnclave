@@ -7,7 +7,7 @@ const BestSellercard = ({image, title, price}) => {
     <div className=" flex  w-full flex-col items-center justify-center overflow-hidden">
               {/* card Image*/}
                 <div className=" w-full relative overflow-hidden">
-                  <img className="cursor-pointer p-1 xsm:p-2 sm:p-3 hover:scale-105 delay-100 duration-200" src={image} alt="plant" loading="lazy"/>
+                  <img className=" cursor-pointer p-1 xsm:p-2 sm:p-3 hover:scale-105 delay-100 duration-200" src={image} alt="plant" loading="lazy"/>
                   {/* icons for large screens */}
                 <div className="hidden absolute md:flex justify-center items-end cartHover mb-12">
                 <div className="flex  gap-4">

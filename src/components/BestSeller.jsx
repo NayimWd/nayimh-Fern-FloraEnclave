@@ -9,6 +9,7 @@ import product8 from "../assets/image/product8.webp";
 import BestSellercard from "./ui/BestSellercard";
 
 const BestSeller = () => {
+	
 	return (
 		<section className="w-full">
 			<div className="container flex flex-col items-center padding_x">

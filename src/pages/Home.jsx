@@ -3,6 +3,7 @@ import Navbar from "../components/Navbar";
 import HeroSection from "../components/HeroSection";
 import PromotionalCards from "../components/PromotionalCards";
 import Footer from "../components/Footer";
+const IndoorPlant = lazy(()=> import("../components/IndoorPlant"));
 const BestSeller = lazy(() => import("../components/BestSeller"));
 const PromotionalBanner = lazy(() => import("../components/PromotionalBanner"));
 const PromoCartsecond = lazy(()=>import("../components/PromoCartsecond"));
@@ -13,6 +14,7 @@ const Home = () => {
 			<Navbar />
 			<HeroSection />
 			<PromotionalCards />
+			<IndoorPlant/>
 			<BestSeller />
 			<PromotionalBanner/>
 			<PromoCartsecond/>

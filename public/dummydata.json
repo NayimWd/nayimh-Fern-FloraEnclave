@@ -1,0 +1,50 @@
+[
+    {
+        "id" : 1,
+        "name": "Transvaal Daisy",
+        "price": "200",
+        "img": "https://i.ibb.co/t3Wh31v/product1.webp"
+    },
+    {
+        "id" : 2,
+        "name": "Purple Flowers",
+        "price": "250",
+        "img": "https://i.ibb.co/Qjdk93B/product2.webp"
+    },
+    {
+        "id" : 3,
+        "name": "Palm Branch",
+        "price": "500",
+        "img": "https://i.ibb.co/k6QqJ5z/product3.webp"
+    },
+    {
+        "id" : 4,
+        "name": "Laceleaf Peace",
+        "price": "300",
+        "img": "https://i.ibb.co/mS1cjpw/product4.webp"
+    },
+    {
+        "id" : 5,
+        "name": "Jasmine",
+        "price": "220",
+        "img": "https://i.ibb.co/X7gsTPT/product5.webp"
+    },
+    {
+        "id" : 6,
+        "name": "Houseplant Philippine",
+        "price": "150",
+        "img": "https://i.ibb.co/p6Tmjg1/product6.webp"
+    },
+    {
+        "id" : 7,
+        "name": "Green Succulent",
+        "price": "270",
+        "img": "https://i.ibb.co/BPWtpny/product7.webp"
+    },
+    {
+        "id" : 8,
+        "name": "Green Leafed Plant",
+        "price": "300",
+        "img": "https://i.ibb.co/KVtKbkF/product8.webp"
+    }
+]
