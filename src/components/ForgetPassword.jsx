@@ -1,8 +1,8 @@
 import Input from "../ui/Input";
-import loginBg from "../assets/image/loginImg.webp";
 import { Link, useNavigate } from "react-router-dom";
 import { ErrorToast, SuccessToast, isEmail } from "../ui/helper";
 import { useState } from "react";
+import LoginImg from "./ReusableComponent/LoginImg";
 
 const ForgetPassword = () => {
 	// states for hold and store data
@@ -46,7 +46,7 @@ const ForgetPassword = () => {
 				<div className="w-full md:w-1/2 flex flex-col justify-center items-center ">
 					<div className="w-full xsm:w-[420px]  px-4 xsm:px-8 py-[50px]  md:py-14">
 						<h1 className="font-sans w-full font-bold text-darker_green text-3xl  md:text-4xl flex_between items-center mb-6">
-							Reset password
+							Submit Email
 						</h1>
 
 						<p className="text-darker_green text-[16px] sm:text-[18px] mt-1 font-sans">
@@ -85,13 +85,7 @@ const ForgetPassword = () => {
 					</div>
 				</div>
 				{/* image */}
-				<div className="hidden md:flex items-center  md:w-1/2">
-					<img
-						className="max-h-[750px]  object-center object-fill rounded-md md:h-[646px] lg:h-full"
-						src={loginBg}
-						alt="bg"
-					/>
-				</div>
+				<LoginImg />
 			</div>
 		</section>
 	);

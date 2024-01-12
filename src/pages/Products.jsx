@@ -1,12 +1,24 @@
-import React from 'react'
-import Navbar from '../components/Navbar'
+import React, { lazy } from "react";
+import Navbar from "../components/Navbar"
+import DynamicBanner from "../components/ReusableComponent/DynamicBanner";
+import { useLocation } from "react-router-dom";
+import ProductSection from "../components/ProductSection";
+const Footer = lazy(() => import("../components/Footer"));
 
 const Products = () => {
-  return (
-    <div>
-    <Navbar/>
-    Products</div>
-  )
-}
+	const location = useLocation();
+	const pathname = location.pathname.slice(1);
 
-export default Products
+	return (
+		<section>
+			<Navbar />
+			<div className="">
+				<DynamicBanner pathname={pathname} />
+				<ProductSection/>
+			</div>
+			<Footer />
+		</section>
+	);
+};
+
+export default Products;

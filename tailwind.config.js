@@ -45,6 +45,7 @@ export default {
 			backgroundImage: {
 				heroBg: "url('./src/assets/image/s6.webp')",
 				bannerBg: "url('./src/assets/image/psBanner.jpg')",
+				banner: "url('./src/assets/image/productBanner.webp')",
 				loginBg: "url('./src/assets/image/psformbg.jpg')",
 				logBg: "url('./src/assets/image/logimg.png')",
 			},

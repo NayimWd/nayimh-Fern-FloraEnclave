@@ -1,6 +1,5 @@
 import React, { useState } from "react";
 import Input from "../ui/Input";
-import loginBg from "../assets/image/loginImg.webp";
 import { FcGoogle } from "react-icons/fc";
 import { FaFacebook } from "react-icons/fa";
 import { TiHome } from "react-icons/ti";
@@ -12,6 +11,7 @@ import {
 	isEmpty,
 	isPassword,
 } from "../ui/helper";
+import LoginImg from "./ReusableComponent/LoginImg";
 
 const Registration = () => {
 	// states for hold and store data
@@ -102,23 +102,6 @@ const Registration = () => {
 								value={inputData.password}
 								handleChange={handleChange}
 							/>
-
-							{/*<div className="flex justify-between -mt-2 mb-4 px-1 text-sm text-darker_green">
-								<span className="flex gap-2">
-									<input
-										className="accent-dark_green cursor-pointer"
-										onChange={handleChange}
-										aria-label="checkbox"
-										name="check"
-										type="checkbox"
-									/>{" "}
-									<p>remember me</p>
-								</span>
-								<span className="font-bold cursor-pointer hover:text-dark_green">
-									{" "}
-									forget password{" "}
-								</span>
-	</div>*/}
 							{/* Button */}
 							<button className="w-full mt-6 h-[34px] rounded-md items-center flex justify-center bg-darker_green text-white text-lg py-1">
 								{" "}
@@ -155,13 +138,7 @@ const Registration = () => {
 					</div>
 				</div>
 				{/* image */}
-				<div className="hidden md:flex  md:w-1/2 items-center ">
-					<img
-						className="max-h-[750px]  object-center object-fill rounded-md md:h-[646px] lg:h-full"
-						src={loginBg}
-						alt="bg"
-					/>
-				</div>
+				<LoginImg />
 			</div>
 		</section>
 	);

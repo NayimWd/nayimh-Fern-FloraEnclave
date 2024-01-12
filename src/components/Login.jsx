@@ -1,19 +1,25 @@
-import  {  useState } from "react";
+import { useState } from "react";
 import Input from "../ui/Input";
-import loginBg from "../assets/image/loginImg.webp";
 import { FcGoogle } from "react-icons/fc";
 import { FaFacebook } from "react-icons/fa";
 import { TiHome } from "react-icons/ti";
 import { Link, useNavigate } from "react-router-dom";
-import { ErrorToast, SuccessToast, isEmail, isEmpty, isPassword } from "../ui/helper";
+import {
+	ErrorToast,
+	SuccessToast,
+	isEmail,
+	isEmpty,
+	isPassword,
+} from "../ui/helper";
+import LoginImg from "./ReusableComponent/LoginImg";
 
 const Login = () => {
-// states for hold and store data
+	// states for hold and store data
 	// const [storeData, setStoreData] = useState({});
 	const [inputData, setInputData] = useState({
 		email: "",
 		password: "",
-		check: ""
+		check: "",
 	});
 	const navigate = useNavigate();
 
@@ -21,37 +27,33 @@ const Login = () => {
 	const handleChange = (e) => {
 		const name = e.target.name;
 		const value = e.target.value;
-		setInputData({...inputData, [name]: value})
-	}
+		setInputData({ ...inputData, [name]: value });
+	};
 
 	// submit handler
 	const handleSubmit = (e) => {
 		e.preventDefault();
-		
+
 		// storing data to state
-		const formData = {...inputData};
+		const formData = { ...inputData };
 		// setStoreData(formData)
 		// input validation
 		let email = inputData.email;
 		let password = inputData.password;
 		let check = inputData.check;
 
-		if(!isEmail(email)){
-			ErrorToast("Enter Invalid Email")
-		} else if(!isPassword(password)){
-			ErrorToast("Invalid Password! read Instruction")
-		} else if(isEmpty(check)){
-			ErrorToast("Fill the checkbox")
-		} 
-		else{
-			SuccessToast("login success")
-			console.log(formData)
-			setInputData({email: "", password: "", check: ""})
+		if (!isEmail(email)) {
+			ErrorToast("Enter Invalid Email");
+		} else if (!isPassword(password)) {
+			ErrorToast("Invalid Password! read Instruction");
+		} else if (isEmpty(check)) {
+			ErrorToast("Fill the checkbox");
+		} else {
+			SuccessToast("login success");
+			console.log(formData);
+			setInputData({ email: "", password: "", check: "" });
 			e.target.reset();
-			
 		}
-		
-
 	};
 
 	return (
@@ -61,9 +63,13 @@ const Login = () => {
 				{/* form */}
 				<div className="w-full md:w-1/2 flex flex-col justify-center items-center ">
 					<div className="w-full xsm:w-[404px]  px-4 xsm:px-8 py-[50px]  md:py-14">
-					<span className="font-sans font-bold text-darker_green text-3xl  md:text-4xl flex_between items-center">
-					<h1>Welcome Back</h1> <Link to="/" title="home"> <TiHome className='w-9 cursor-pointer'/> </Link>
-					</span>
+						<span className="font-sans font-bold text-darker_green text-3xl  md:text-4xl flex_between items-center">
+							<h1>Welcome Back</h1>{" "}
+							<Link to="/" title="home">
+								{" "}
+								<TiHome className="w-9 cursor-pointer" />{" "}
+							</Link>
+						</span>
 						<p className="text-darker_green text-[16px] sm:text-[18px] mt-1 font-sans">
 							Enter your Credentials to access your account
 						</p>
@@ -88,18 +94,28 @@ const Login = () => {
 
 							<div className="flex justify-between -mt-2 mb-4 px-1 text-sm text-darker_green">
 								<span className="flex gap-2">
-									<input className="accent-dark_green cursor-pointer" type="checkbox"
-									aria-label="checkbox"
-									name="check" 
-									onChange={handleChange}
+									<input
+										className="accent-dark_green cursor-pointer"
+										type="checkbox"
+										aria-label="checkbox"
+										name="check"
+										onChange={handleChange}
 									/>{" "}
-									
 									<p>remember me</p>
 								</span>
-								<Link to="/ForgetPassword" title="forgetPass" > <p className="font-bold cursor-pointer hover:text-dark_green"> forget password </p></Link>
+								<Link to="/ForgetPassword" title="forgetPass">
+									{" "}
+									<p className="font-bold cursor-pointer hover:text-dark_green">
+										{" "}
+										forget password{" "}
+									</p>
+								</Link>
 							</div>
 							{/* Button */}
-							<button type="submit" className="w-full h-[34px] rounded-md items-center flex justify-center bg-darker_green text-white text-lg py-1">
+							<button
+								type="submit"
+								className="w-full h-[34px] rounded-md items-center flex justify-center bg-darker_green text-white text-lg py-1"
+							>
 								{" "}
 								sign in{" "}
 							</button>
@@ -134,9 +150,7 @@ const Login = () => {
 					</div>
 				</div>
 				{/* image */}
-				<div className="hidden md:flex items-center  md:w-1/2">
-					<img className="max-h-[750px]  object-center object-fill rounded-md md:h-[646px] lg:h-full" src={loginBg} alt="bg" />
-				</div>
+				<LoginImg />
 			</div>
 		</section>
 	);

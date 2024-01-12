@@ -1,9 +1,9 @@
-import loginBg from "../assets/image/loginImg.webp";
 import { Link, useNavigate } from "react-router-dom";
 import { ErrorToast, SuccessToast } from "../ui/helper";
 import { useState } from "react";
 import OtpInput from "react-otp-input";
 import MinutesCoundown from "./hooks/MinutesCoundown";
+import LoginImg from "./ReusableComponent/LoginImg";
 
 const ResetPassword = () => {
 	// states for hold and store data
@@ -102,13 +102,7 @@ const ResetPassword = () => {
 					</div>
 				</div>
 				{/* image */}
-				<div className="hidden md:flex items-center  md:w-1/2">
-					<img
-						className="max-h-[750px]  object-center object-fill rounded-md md:h-[646px] lg:h-full"
-						src={loginBg}
-						alt="bg"
-					/>
-				</div>
+				<LoginImg />
 			</div>
 		</section>
 	);
