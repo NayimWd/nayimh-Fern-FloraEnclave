@@ -5,7 +5,7 @@ const DynamicBanner = ({ pathname }) => {
 		<section className="w-full  h-[200px] mt-[136px] bg-banner object-cover bg-center  bg-no-repeat ">
 			<div className="flex flex-col gap-4 justify-center items-center w-full h-full">
 			<h1 className="text-white text-lg xsm:text-xl md:text-2xl tracking-wider font-reem">{path}</h1>
-				<p className="text-white text-lg xsm:text-xl md:text-xl tracking-wider font-reem">				
+				<p className="text-white text-lg  tracking-wider font-reem">				
 					HOME {"/"} {path}
 				</p>
 			</div>

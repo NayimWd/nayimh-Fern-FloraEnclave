@@ -98,7 +98,7 @@ const Navbar = () => {
 		<header className="fixed  w-[100vw] top-0 left-0 -right-[1px] h-16 z-10">
 			{/* ---------------------------------------- */}
 			{/* position above the navbar contact info large screen */}
-			<meta name="description" content="Home" />
+			<meta name="Plant Nursery In Bangladesh" content="Home" />
 			<div className={`${isSticky ? "hidden" : "block"}`}>
 				<div className="hidden sm:flex">
 					<HeadInfo />
@@ -169,7 +169,7 @@ const Navbar = () => {
 								className="w-6 h-6 cursor-pointer hover:scale-110 text-white delay-200 ease-in"
 							/>
 							<div className="absolute -top-1 -right-[6px] ">
-								<DotNotification/>
+								<DotNotification />
 							</div>
 							{isFav ? (
 								<span ref={favRef} className="fixed top-0 right-0 animation_in">
@@ -188,7 +188,7 @@ const Navbar = () => {
 								alt="cart"
 							/>
 							<div className="absolute -top-1 -right-2 ">
-								<DotNotification/>
+								<DotNotification />
 							</div>
 							{isCart ? (
 								<span ref={cartRef} className="fixed top-0 right-0  slider_in">
@@ -294,7 +294,6 @@ const Navbar = () => {
 							isSticky ? "-mt-[87px]" : "-mt-[136px]"
 						} right-0 animation_in`}
 					>
-					
 						{" "}
 						<Favoritenav close={toggleFav} />{" "}
 					</span>
@@ -302,7 +301,6 @@ const Navbar = () => {
 					<span className="absolute animation_out duration-300 "> </span>
 				)}
 				{isCart ? (
-					
 					<span
 						ref={cartRef}
 						className={`absolute lg:hidden  ${
