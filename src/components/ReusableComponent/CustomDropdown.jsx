@@ -19,7 +19,7 @@ const CustomDropdown = ({dropdownOption}) => {
 
   return (
     <div className="relative">
-        <button onClick={handleClick} className="flex text-center bg-green/10 justify-between px-4 py-2 text-bg_green text-xl font-jost w-[200px] border-b-2 border-b-dark_green">{isOption} <RiArrowDropDownFill className="w-8 h-8"/> </button>
+        <button onClick={handleClick} className="flex text-center bg-green/20 justify-between px-4 py-2 text-bg_green text-xl font-jost w-[200px] border-b-2 border-b-dark_green">{isOption} <RiArrowDropDownFill className="w-8 h-8"/> </button>
         <div>
         { open &&
         <div  className="absolute flex flex-col justify-center items-start right-0 top-16  w-[200px] h-[200px] bg-white  z-50 rounded shadow-xl">

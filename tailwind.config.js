@@ -48,6 +48,7 @@ export default {
 				banner: "url('./src/assets/image/productBanner.webp')",
 				loginBg: "url('./src/assets/image/psformbg.jpg')",
 				logBg: "url('./src/assets/image/logimg.png')",
+				aboutBanner: "url('./src/assets/image/aboutImg.webp')"
 			},
 		},
 	},

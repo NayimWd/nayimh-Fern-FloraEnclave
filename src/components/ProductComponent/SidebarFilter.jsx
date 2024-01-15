@@ -58,16 +58,16 @@ const SidebarFilter = ({ filterToggle }) => {
 			<div className="my-8 font-jost">
 				<h1 className="text-darker_green text-xl sm:text-3xl mb-4">SIZE</h1>
 				<div className="flex gap-2 items-center">
-					<p className="px-5 py-2 border-[3px] text-bg_green text-lg border-bg_green cursor-pointer rounded-sm hover:bg-bg_green hover:text-white">
+					<p className="px-5 py-2 border-2 text-bg_green text-lg border-bg_green cursor-pointer rounded-sm hover:bg-bg_green hover:text-white">
 						S
 					</p>
-					<p className="px-5 py-2 border-[3px] text-bg_green text-lg border-bg_green cursor-pointer rounded-sm hover:bg-bg_green hover:text-white">
+					<p className="px-5 py-2 border-2 text-bg_green text-lg border-bg_green cursor-pointer rounded-sm hover:bg-bg_green hover:text-white">
 						M
 					</p>
-					<p className="px-5 py-2 border-[3px] text-bg_green text-lg border-bg_green cursor-pointer rounded-sm hover:bg-bg_green hover:text-white">
+					<p className="px-5 py-2 border-2 text-bg_green text-lg border-bg_green cursor-pointer rounded-sm hover:bg-bg_green hover:text-white">
 						L
 					</p>
-					<p className="px-5 py-2 border-[3px] text-bg_green text-lg border-bg_green cursor-pointer rounded-sm hover:bg-bg_green hover:text-white">
+					<p className="px-5 py-2 border-2 text-bg_green text-lg border-bg_green cursor-pointer rounded-sm hover:bg-bg_green hover:text-white">
 						XL
 					</p>
 				</div>

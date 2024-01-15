@@ -6,7 +6,7 @@ import "swiper/css";
 import "swiper/css/navigation";
 import "swiper/css/pagination";
 
-import { Autoplay, Pagination, Navigation } from "swiper/modules";
+import {  Navigation } from "swiper/modules";
 import BestSellercard from "./ui/BestSellercard";
 
 const IndoorPlant = () => {
@@ -41,6 +41,7 @@ const IndoorPlant = () => {
 					<Swiper
 						slidesPerView={4}
 						spaceBetween={10}
+						loop={true}
 						autoplay={{
 							delay: 2500,
 							disableOnInteraction: false,
@@ -70,7 +71,7 @@ const IndoorPlant = () => {
 							},
 						}}
 						navigation={true}
-						modules={[Autoplay, Navigation]}
+						modules={[ Navigation]}
 						className="mySwiper"
 					>
 						{trees.map((tree) => (

@@ -2,6 +2,7 @@ import React, { lazy } from 'react'
 import Navbar from '../components/Navbar'
 import DynamicBanner from '../components/ReusableComponent/DynamicBanner'
 import { useLocation } from 'react-router-dom'
+import AboutComponent from '../components/About/AboutComponent'
 const Footer = lazy(()=>import('../components/Footer'))
 
 const About = () => {
@@ -11,7 +12,9 @@ const About = () => {
     <section>
     <Navbar/>
       <DynamicBanner pathname={pathname}/>
+        <AboutComponent/>
     <Footer/>
+
    </section>
   )
 }

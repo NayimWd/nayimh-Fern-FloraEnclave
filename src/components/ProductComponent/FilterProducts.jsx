@@ -1,23 +1,26 @@
-import filtericon from "../../assets/icon/filter.png";
-import { FaList } from "react-icons/fa";
-import { IoGridOutline } from "react-icons/io5";
+import { CiFilter, CiSearch } from "react-icons/ci";
+import { IoIosClose } from "react-icons/io";
 import CustomDropdown from "../ReusableComponent/CustomDropdown";
-import { useState } from "react";
+import { useRef, useState } from "react";
 import SidebarFilter from "./SidebarFilter";
 
 const FilterProducts = () => {
-	const [selected, setSelected] = useState(false);
-	const [view, setView] = useState("grid");
 	const [open, setOpen] = useState(false);
-
-	// function for list view and grid view
-	const toggleView = (e) => {
-		setSelected(!selected);
-		e === "grid" ? setView("grid") : setView("list");
-	};
+	const [openSearch, setOpenSearch] = useState(false);
+	const searchRef = useRef(null);
 
 	const filterToggle = () => {
 		setOpen(!open);
+	};
+
+	const toggleSearch = () => {
+		setOpenSearch(!openSearch);
+	};
+
+	const handleSearch = () => {
+		if (searchRef.current?.value?.length >= 3) {
+			console.log(searchRef.current.value);
+		}
 	};
 
 	// option for filter
@@ -43,34 +46,45 @@ const FilterProducts = () => {
 	];
 
 	return (
-		<section className="mb-10">
+		<section className="mb-10 padding_x">
 			<div className="flex flex-col-reverse sm:flex-row gap-5 justify-between items-center">
 				<div>
 					{" "}
-					<button onClick={filterToggle} className="flex items-center gap-1 px-5 py-2 border-[2px] font-bold border-dark_green text-bg_green btn_amination hover:bg-bg_green hover:text-white rounded-sm ">
+					<button
+						onClick={filterToggle}
+						className="flex items-center gap-1 px-5 py-2 border-[2px] font-bold border-dark_green text-bg_green btn_amination hover:bg-bg_green hover:text-white rounded-sm "
+					>
 						{" "}
-						<img
-							className="w-6 h-6"
-							src={filtericon}
-							alt="filter"
-						/> Filter{" "}
+						<CiFilter className="w-6 h-6 text-bg_green" /> Filter{" "}
 					</button>{" "}
 				</div>
 				<div className="flex items-center gap-4 xsm:gap-7">
-					<div className="flex items-center gap-2 xsm:gap-5 bg-green/20 px-3 xsm:px-8 py-3 rounded-sm">
-						<FaList
-							onClick={() => toggleView("list")}
-							className={`w-6 h-6  cursor-pointer ${
-								view === "list" ? "text-bg_green" : "text-dark_gray"
-							}`}
-						/>
-						<IoGridOutline
-							onClick={() => toggleView("grid")}
-							className={`w-6 h-6  cursor-pointer ${
-								view === "grid" ? "text-bg_green" : "text-dark_gray"
-							}`}
-						/>
+					{/* Searchbar */}
+					<div className=" bg-green/20 px-2 w-14 h-12 flex justify-center items-center  border-b-2 border-b-dark_green relative rounded-sm">
+						{openSearch ? (
+							<IoIosClose
+								onClick={toggleSearch}
+								className="w-8 h-8 cursor-pointer text-dark_green "
+							/>
+						) : (
+							<CiSearch
+								onClick={toggleSearch}
+								className="w-8 h-8 cursor-pointer text-dark_green "
+							/>
+						)}
+						{openSearch && (
+							<div className="absolute top-14 left-0   w-[220px] h-10  bg-white">
+							<input
+								onChange={handleSearch}
+								ref={searchRef}
+								placeholder="Search Here"
+								type="text"
+								className=" text-bg_green font-semibold tracking-wider bg-green/20 py-2 px-4 rounded-sm outline-none border-b-2 border-b-dark_green"
+							/>
+							</div>
+						)}
 					</div>
+					{/* Dropdown */}
 					<div>
 						<CustomDropdown dropdownOption={dropdownOption} />
 					</div>
@@ -79,9 +93,11 @@ const FilterProducts = () => {
 			{/* side filter option */}
 			{open ? (
 				<div className="fixed top-0 left-0 h-screen w-full xsm:w-[350px] bg-white animation_in z-50">
-					<SidebarFilter filterToggle={filterToggle}  />
+					<SidebarFilter filterToggle={filterToggle} />
 				</div>
-			) : (<span className="fixed top-0 left-0 h-screen w-full xsm:w-[350px] bg-white animation_out duration-300"></span>)}
+			) : (
+				<span className="fixed top-0 left-0 h-screen w-full xsm:w-[350px] bg-white animation_out duration-300"></span>
+			)}
 		</section>
 	);
 };
