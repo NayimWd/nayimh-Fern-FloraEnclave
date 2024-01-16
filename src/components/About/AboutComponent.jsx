@@ -1,12 +1,13 @@
 import { lazy } from "react";
 import about1 from "../../assets/image/about1.webp";
 import about2 from "../../assets/image/about2.webp";
+import NewsLetter from "../ReusableComponent/NewsLetter";
 const InstaImage = lazy(() => import("./InstaImage"));
 const AboutPoster = lazy(() => import("./AboutPoster"));
 
 const AboutComponent = () => {
 	return (
-		<section className="w-full section_p-y ">
+		<section className="w-full section_m-t">
 			<div className="container grid grid-cols-1 md:grid-cols-2  w-full justify-between items-center gap-8 mb-24">
 				<div className="w-full order-2 md:order-1 flex flex-col items-end justify-center">
 					<div className=" w-full lg:w-[90%]">
@@ -83,8 +84,11 @@ const AboutComponent = () => {
 			
 				<AboutPoster />
 				
+				<div className="mt-14 xsm:mt-20 sm:mt-24 lg:mt-[120px]">
 				
-			<InstaImage />
+				<NewsLetter/>
+				<InstaImage />
+				</div>
 		</section>
 	);
 };

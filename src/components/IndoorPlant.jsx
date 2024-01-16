@@ -41,7 +41,7 @@ const IndoorPlant = () => {
 					<Swiper
 						slidesPerView={4}
 						spaceBetween={10}
-						loop={true}
+						loop={false}
 						autoplay={{
 							delay: 2500,
 							disableOnInteraction: false,

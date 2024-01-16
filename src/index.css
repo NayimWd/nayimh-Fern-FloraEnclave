@@ -10,6 +10,10 @@
         @apply py-14 xsm:py-20 sm:py-24 lg:py-[120px]
     }
 
+    .section_m-t {
+      @apply mt-14 xsm:mt-20 sm:mt-24 lg:mt-[120px]
+    }
+
     .padding_x {
       @apply px-2 sm:px-3 
     }

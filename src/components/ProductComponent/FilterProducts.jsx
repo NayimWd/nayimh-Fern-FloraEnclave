@@ -74,13 +74,13 @@ const FilterProducts = () => {
 						)}
 						{openSearch && (
 							<div className="absolute top-14 left-0   w-[220px] h-10  bg-white">
-							<input
-								onChange={handleSearch}
-								ref={searchRef}
-								placeholder="Search Here"
-								type="text"
-								className=" text-bg_green font-semibold tracking-wider bg-green/20 py-2 px-4 rounded-sm outline-none border-b-2 border-b-dark_green"
-							/>
+								<input
+									onChange={handleSearch}
+									ref={searchRef}
+									placeholder="Search Here"
+									type="text"
+									className=" text-bg_green font-semibold tracking-wider bg-green/20 py-2 px-4 rounded-sm outline-none border-b-2 border-b-dark_green"
+								/>
 							</div>
 						)}
 					</div>

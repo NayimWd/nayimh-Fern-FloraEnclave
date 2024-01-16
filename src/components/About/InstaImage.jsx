@@ -24,7 +24,7 @@ const InstaImage = () => {
 		fetchData();
 	}, []);
 	return (
-		<div className="w-full mt-12">
+		<div className="w-full ">
 			<Swiper
 				slidesPerView={3}
 				spaceBetween={10}
@@ -58,7 +58,7 @@ const InstaImage = () => {
 			>
 				{trees?.map((tree) => (
 					<SwiperSlide key={tree?.id}>
-						<img className="" src={tree?.img} alt="picture" />
+						<img className="" src={tree?.img} alt="picture" loading="lazy"/>
 					</SwiperSlide>
 				))}
 			</Swiper>
