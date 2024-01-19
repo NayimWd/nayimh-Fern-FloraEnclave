@@ -1,10 +1,9 @@
 import { MdOutlineClose } from "react-icons/md";
 import emptyImg from "../assets/image/Frame.png";
 
-
 const Favoritenav = ({ close }) => {
 	return (
-		<div  className="flex flex-col  items-center  w-[285px] h-screen p-8 bg-white_clr lg:rounded-md shadow-sm shadow-subtle_gray z-10">
+		<div className="flex flex-col  items-center  w-full xsm:w-[390px] h-screen p-8 bg-white_clr  shadow-lg z-10">
 			<div className="flex_between w-full">
 				<p className="text-darker_green text-xl font-bold font-sans">
 					{" "}
@@ -16,7 +15,7 @@ const Favoritenav = ({ close }) => {
 				/>
 			</div>
 			{/*if cart empty apply logic here */}
-			<div className="flex flex-col w-full justify-center items-center mt-8">
+			<div className="flex flex-col w-full h-full justify-center items-center ">
 				<p className="text-darker_green font-sans font-semibold">
 					{" "}
 					Favorite Trees is empty{" "}

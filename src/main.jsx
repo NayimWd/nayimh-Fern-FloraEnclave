@@ -14,6 +14,7 @@ import {
 import DoadLoader from "./ui/loader/DoadLoader.jsx";
 const HomePage = lazy(() => import("./pages/Home.jsx"));
 const Products = lazy(() => import("./pages/Products.jsx"));
+const ProductDetails = lazy(()=> import("./pages/ProductDetails.jsx"));
 const About = lazy(() => import("./pages/About.jsx"));
 const Layout = lazy(() => import("./pages/Dashboard/Layout.jsx"));
 const Contact = lazy(() => import("./pages/Contact.jsx"));
@@ -44,6 +45,7 @@ const router = createBrowserRouter(
 		<Route path="/" element={<App />}>
 			<Route index={true} path="/" element={<HomePage />} />
 			<Route path="/products" element={<Products />} />
+			<Route path="/products/:id" element={<ProductDetails />} />
 			<Route path="/about" element={<About />} />
 			<Route path="/contact" element={<Contact />} />
 			{/* Dashboard*/}

@@ -51,8 +51,10 @@ const Navbar = () => {
 	// close menu on outsite click
 	let menuRef = useRef();
 	let favRef = useRef();
-	let cartRef = useRef();
+	let cartRef = useRef(null);
 	let profileRef = useRef();
+
+	
 
 	// function
 	useEffect(() => {
@@ -66,21 +68,12 @@ const Navbar = () => {
 		document.addEventListener("mousedown", menuhandler);
 	}, []);
 
-	// sticky on scroll function
-	useEffect(() => {
-		const handleScroll = () => {
-			if (window.scrollY > 300) {
-				setIsSticky(true);
-			} else {
-				setIsSticky(false);
-			}
-		};
-		window.addEventListener("scroll", handleScroll);
+	const handleCart = (e) => {
+		if(cartRef.current && !cartRef.current?.contains(e.target)){
+			setIsCart(false)
+		}
+	}
 
-		return () => {
-			window.addEventListener("scroll", handleScroll);
-		};
-	}, []);
 
 	// -------------------------------------------------- //
 
@@ -191,7 +184,7 @@ const Navbar = () => {
 								<DotNotification />
 							</div>
 							{isCart ? (
-								<span ref={cartRef} className="fixed top-0 right-0  slider_in">
+								<span ref={cartRef} className="fixed  top-0 right-0  slider_in">
 									{" "}
 									<Cart close={toggleCart} />{" "}
 								</span>
