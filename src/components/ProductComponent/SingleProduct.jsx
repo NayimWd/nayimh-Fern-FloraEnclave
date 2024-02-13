@@ -1,12 +1,20 @@
 import React from 'react'
-import { useParams } from 'react-router-dom'
+import { useLocation, useParams } from 'react-router-dom'
+import DynamicBanner from '../ReusableComponent/DynamicBanner';
 
 const SingleProduct = () => {
-    const id = useParams();
+    const {id} = useParams();
+
+    const location = useLocation();
+  const pathname = location.pathname.slice(1);
+
   return (
-    <div className='container section_p-y mt-[100px]'>
+    <>
+    <DynamicBanner pathname={pathname} name="Flower"/>
+    <div className='container section_p-y '>
     SingleProduct 
     </div>
+    </>
   )
 }
 

@@ -2,6 +2,7 @@ import { Outlet } from "react-router-dom";
 import { Toaster } from "react-hot-toast";
 import DoadLoader from "./ui/loader/DoadLoader";
 import { useEffect, useState } from "react";
+import ScrollToTop from "./ui/ScrollTopOnLoad";
 
 function App() {
 	// full screen loader
@@ -17,7 +18,7 @@ function App() {
 	return !loading ? (
 		<div className=" overflow-hidden">
 			<Toaster />
-
+			<ScrollToTop/>
 			<Outlet />
 		</div>
 	) : (

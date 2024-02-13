@@ -68,14 +68,23 @@ const Navbar = () => {
 		document.addEventListener("mousedown", menuhandler);
 	}, []);
 
-	const handleCart = (e) => {
-		if(cartRef.current && !cartRef.current?.contains(e.target)){
-			setIsCart(false)
+	  // sticky on scroll function
+	  useEffect(()=>{
+		const handleScroll = () => {
+		  if(window.scrollY > 300){
+			setIsSticky(true);
+		  } else {
+			setIsSticky(false)
+		  }
+		};
+		window.addEventListener('scroll', handleScroll);
+	
+		return ()=> {
+		  window.removeEventListener('scroll', handleScroll);
 		}
-	}
+	
+	  },[]);
 
-
-	// -------------------------------------------------- //
 
 	// -------------------------------------------------- //
 	// array for nav items

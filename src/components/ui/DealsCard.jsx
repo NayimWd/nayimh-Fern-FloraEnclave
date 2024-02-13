@@ -3,7 +3,7 @@ import { IoCartOutline } from "react-icons/io5";
 const DealsCard = ({ img, title, price, desc }) => {
 	return (
 		<div className=" flex flex-col  border-2 border-light_gray rounded">
-			<div className="w-full  flex flex-col xl:flex-row gap-7 p-8 pb-4">
+			<div className="w-full  flex flex-col xl:flex-row gap-7 p-3 xsm:p-8 pb-4">
 				<div className=" w-full xl:w-1/2">
 					{" "}
 					<img className="rounded" src={img} alt="plant" loading="lazy" />{" "}
@@ -18,18 +18,18 @@ const DealsCard = ({ img, title, price, desc }) => {
 					<p className="text-dark_gray leading-6 text-[15px] mb-4"> {desc} </p>
 					<div className="flex flex-wrap items-center border-soft_green  gap-2">
 						<button className="flex  gap-1 border py-2 px-4 items-center text-darker_green hover:bg-bg_green hover:text-white text-sm font-medium rounded-sm btn_amination">
-							<IoCartOutline className="w-5" /> ADD TO CART{" "}
+							<IoCartOutline className=" w-5 h-5 xsm:w-6 xsm:h-6" /> ADD TO CART{" "}
 						</button>
 						<span data-tooltip="View" data-flow="top">
 							<button className="py-2 px-3 items-center border text-darker_green hover:bg-bg_green hover:text-white text-sm font-medium rounded-sm btn_amination" aria-label="view">
 								{" "}
-								<CiSearch className="w-5" />{" "}
+								<CiSearch className="w-5 h-5 xsm:w-6 xsm:h-6" />{" "}
 							</button>
 						</span>
 						<span data-tooltip="Wish List" data-flow="top">
 							<button className="py-2 px-3 items-center border text-darker_green hover:bg-bg_green hover:text-white text-sm font-medium rounded-sm  btn_amination" aria-label="wishlist">
 								{" "}
-								<CiHeart className="w-5" />{" "}
+								<CiHeart className="w-5 h-5 xsm:w-6 xsm:h-6" />{" "}
 							</button>
 						</span>
 					</div>
@@ -37,9 +37,9 @@ const DealsCard = ({ img, title, price, desc }) => {
 			</div>
 			<div className=" w-full py-5 sm:py-9 md:py-5 xl:py-9 border-t-2 flex flex-wrap gap-4 justify-between items-center px-8">
             <div>
-				<span className="flex  justify-center items-center gap-4 text-dark_red">
+				<span className=" flex  justify-center items-center gap-4 text-dark_red">
 					{" "}
-					<CiClock2 className="w-6 font-extrabold  " />{" "}
+					<CiClock2 className="w-6 h-6   font-extrabold  " title="clock-icon" />{" "}
 					<h1 className="font-jost font-bold text-lg tracking-wider leading-6">
 						{" "}
 						Hurry up!{" "}

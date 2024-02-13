@@ -4,7 +4,8 @@ import BestSellercard from "../ui/BestSellercard";
 
 const ProductSection = () => {
 	const [trees, setTrees] = useState([]);
-	const [gridView, setGridView] = useState(true);
+	
+	
 	useEffect(() => {
 		const fetchData = async () => {
 			try {
@@ -24,18 +25,18 @@ const ProductSection = () => {
 			<div className="container flex flex-col items-center">
 				<div
 					className={`container relative mt-8 grid ${
-						gridView
-							? "grid-cols-2 md:grid-cols-3 lg:grid-cols-4"
-							: "grid-cols-1 lg:grid-cols-2"
+						 "grid-cols-2 md:grid-cols-3 lg:grid-cols-4"
+							
 					}  gap-x-2 gap-y-5 xsm:gap-x-4 sm:gap-7`}
 				>
 					{trees.map((tree) => (
 						<BestSellercard
 							key={tree?.id}
+							pid={tree?.id}
 							image={tree?.img}
 							title={tree?.name}
 							price={tree?.price}
-							gridView={gridView}
+							
 						/>
 					))}
 				</div>

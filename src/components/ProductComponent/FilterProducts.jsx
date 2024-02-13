@@ -7,6 +7,7 @@ import SidebarFilter from "./SidebarFilter";
 const FilterProducts = () => {
 	const [open, setOpen] = useState(false);
 	const [openSearch, setOpenSearch] = useState(false);
+	const [sort, setSort] = useState("Default Sorting");
 	const searchRef = useRef(null);
 
 	const filterToggle = () => {
@@ -17,33 +18,18 @@ const FilterProducts = () => {
 		setOpenSearch(!openSearch);
 	};
 
+	
+
 	const handleSearch = () => {
 		if (searchRef.current?.value?.length >= 3) {
 			console.log(searchRef.current.value);
 		}
 	};
 
-	// option for filter
-	let dropdownOption = [
-		{
-			option: "Default Sorting",
-		},
-		{
-			option: "A-Z",
-		},
-		{
-			option: "Z-A",
-		},
-		{
-			option: "High to Low",
-		},
-		{
-			option: "Low to High",
-		},
-		{
-			option: "Best Selling",
-		},
-	];
+	const handleSort = (e) => {
+		console.log(e)
+	}
+
 
 	return (
 		<section className="mb-10 padding_x">
@@ -86,13 +72,13 @@ const FilterProducts = () => {
 					</div>
 					{/* Dropdown */}
 					<div>
-						<CustomDropdown dropdownOption={dropdownOption} />
+						<CustomDropdown  handleSort={handleSort} />
 					</div>
 				</div>
 			</div>
 			{/* side filter option */}
 			{open ? (
-				<div className="fixed top-0 left-0 h-screen w-full xsm:w-[350px] bg-white animation_in z-50">
+				<div className="fixed top-0 left-0 h-screen w-full xsm:w-[350px] bg-white animation_in z-50 overflow-y-scroll">
 					<SidebarFilter filterToggle={filterToggle} />
 				</div>
 			) : (

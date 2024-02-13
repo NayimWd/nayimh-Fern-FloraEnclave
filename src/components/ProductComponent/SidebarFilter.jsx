@@ -11,7 +11,7 @@ const SidebarFilter = ({ filterToggle }) => {
 				/>
 			</div>
 			<hr className="w-full mt-5 border-b-2 border-bg_green" />
-			<div className="my-8 font-jost">
+			<div className="my-7 font-jost">
 				<h1 className="text-darker_green text-xl sm:text-3xl mb-4 ">
 					CATEGORIES
 				</h1>
@@ -32,7 +32,7 @@ const SidebarFilter = ({ filterToggle }) => {
 					Herbs{" "}
 				</p>
 			</div>
-			<div className="my-8 font-jost">
+			<div className="my-7 font-jost">
 				<h1 className="text-darker_green text-xl sm:text-3xl mb-4">PRICE</h1>
 				<p className="text-lg  cursor-pointer  tracking-wider px-4 py-1 hover:text-bg_green">
 					{" "}
@@ -55,7 +55,7 @@ const SidebarFilter = ({ filterToggle }) => {
 					৳1500-2000{" "}
 				</p>
 			</div>
-			<div className="my-8 font-jost">
+			<div className="my-7 font-jost">
 				<h1 className="text-darker_green text-xl sm:text-3xl mb-4">SIZE</h1>
 				<div className="flex gap-2 items-center">
 					<p className="px-5 py-2 border-2 text-bg_green text-lg border-bg_green cursor-pointer rounded-sm hover:bg-bg_green hover:text-white">
