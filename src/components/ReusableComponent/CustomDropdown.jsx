@@ -1,7 +1,7 @@
 import { useEffect, useRef, useState } from "react";
 import { RiArrowDropDownFill } from "react-icons/ri";
 
-const CustomDropdown = ({handleSort}) => {
+const CustomDropdown = () => {
 	const [isOption, setIsoption] = useState("Default Sorting");
 	const [open, setOpen] = useState(false);
 
@@ -13,6 +13,12 @@ const CustomDropdown = ({handleSort}) => {
 		setIsoption(e);
 		setOpen(false);
 	};
+
+		// --- sort filter function---//
+		const handleProductSort = (sort) => {
+			console.log(sort)
+			
+		};
 
 	
 	// option for filter
@@ -51,7 +57,7 @@ const CustomDropdown = ({handleSort}) => {
 						{dropdownOption.map((opt, i) => (
 							<p
 								onClick={() => handleSelect(opt.option)}
-								onMouseDown={()=> handleSort(opt.option)}
+								onMouseDown={()=> handleProductSort(opt.option)}
 								className="px-4 py-1 cursor-pointer hover:bg-bg_green/90 w-full hover:text-white ]"
 								key={i}
 							>
