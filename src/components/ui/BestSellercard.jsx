@@ -15,7 +15,7 @@ const BestSellercard = ({image, title, price, pid}) => {
                 <div className="hidden absolute md:flex justify-center items-end cartHover mb-12">
                 <div className="flex  gap-4">
                 <span className=" w-10 h-10 rounded-full" data-tooltip="cart" data-flow="top"><IoCartOutline className="w-10 h-10 bg-white hover:bg-dark_green rounded-sm p-2 text-dark_green hover:text-white"/></span>
-                <Link to={`/products/${pid}`}>
+                <Link to={`/products/${pid}`} aria-label={`Read more of Product ${title}`}>
                 <span className="w-10 h-10 rounded-full" data-tooltip="View" data-flow="top"><CiSearch className="w-10 h-10 hover:bg-dark_green rounded-sm p-2 bg-white text-dark_green hover:text-white"/></span> </Link>
                 <span className="w-10 h-10 rounded-full" data-tooltip="wishList" data-flow="top"><CiHeart className="w-10 h-10 bg-white hover:bg-dark_green rounded-sm p-2 text-dark_green hover:text-white"/></span>
                 </div>

@@ -1,0 +1,23 @@
+  [
+    {
+        "name": "Cat palm",
+        "slug": "cat-palm",
+        "image": {
+          "key": "cat-palm.jpg",
+          "url": "https://plant-shop/cat-palm.jpg"
+        },
+        "description":
+          "Collected since the Victorian era, Cat Palm is historically loved, desired, and cherished as a symbol of social status. Naturally so, as this Mexico native stylishly fills the room with bright and bold emerald green leaf clusters attached by golden stems to dense, cascading fronds. Graceful and mighty, Cat Palm purifies the air while creating a tropical vacation feel year round.",
+        "original_price": 30,
+        "discount": 10,
+       "price": 27,
+        "in_stock": 100,
+        "sizes": ["S", "M", "L", "XL"],
+        "category": "indoor",
+        "status": "active",
+        "average_rating": 0,
+        "total_reviews": 0,
+        "sales": 0,
+        "top_category": "regular"
+      }
+  ]

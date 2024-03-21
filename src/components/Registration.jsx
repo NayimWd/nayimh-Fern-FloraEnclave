@@ -19,7 +19,7 @@ const Registration = () => {
 		name: "",
 		email: "",
 		password: "",
-		check: "",
+		
 	});
 
 	const navigate = useNavigate();
@@ -40,7 +40,7 @@ const Registration = () => {
 		let name = inputData.name;
 		let email = inputData.email;
 		let password = inputData.password;
-		let check = inputData.check;
+		
 
 		if (isEmpty(name)) {
 			ErrorToast("Enter your name");
@@ -48,13 +48,11 @@ const Registration = () => {
 			ErrorToast("Enter a valid email");
 		} else if (!isPassword(password)) {
 			ErrorToast("Invalid Password! read Instruction");
-		} else if (isEmpty(check)) {
-			ErrorToast("Fill the checkbox");
-		} else {
+		} else {	
 			SuccessToast("Registration success!");
 			console.log(formData);
 			// navigate("/signin")
-			setInputData({ email: "", password: "", check: "" });
+			setInputData({ name: "", email: "", password: ""});
 			e.target.reset();
 		}
 	};
