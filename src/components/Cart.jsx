@@ -7,7 +7,7 @@ import { ErrorToast } from "../ui/helper";
 
 const Cart = ({close}) => {
   // state for toggle
-  const [isEmpty, isIsEmpty] = useState(false);
+  const [isEmpty, isIsEmpty] = useState(true);
   // state for product count 
   const [count, setCount] = useState(0)
 
@@ -68,7 +68,7 @@ const Cart = ({close}) => {
                 </div>
           </div>
            : <div className='flex flex-col w-full h-full justify-center items-center '>
-              <p className='text-darker_green font-sans font-semibold'> Your cart is empty! <span className='font-bold font-lato cursor-pointer hover:text-dark_green'>Shop Now</span> </p>
+              <p className='text-darker_green font-sans font-semibold'> Your cart is empty! <span className='font-bold font-lato cursor-pointer hover:text-dark_green underline'>  Shop Now</span> </p>
               <img className='w-[120px] mt-6' src={emptyImg} alt="empty"/>
           </div>}
     </div>

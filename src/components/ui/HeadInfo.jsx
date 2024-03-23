@@ -17,9 +17,9 @@ const HeadInfo = () => {
 					<p className="text-white">+880 1743 447070</p>
 				</span>
 				<span className="flex_center gap-4">
-					<FaFacebook className="w-6 h-6 text-subtle_gray cursor-pointer hover:scale-110" />
-					<FaInstagramSquare className="w-6 h-6 text-subtle_gray cursor-pointer hover:scale-110" />
-					<FaYoutube className="w-6 h-6 text-subtle_gray cursor-pointer hover:scale-110" />
+					<FaFacebook className="w-6 h-6 text-white cursor-pointer hover:scale-110" />
+					<FaInstagramSquare className="w-6 h-6 text-white cursor-pointer hover:scale-110" />
+					<FaYoutube className="w-6 h-6 text-white cursor-pointer hover:scale-110" />
 				</span>
 			</div>
 		</div>

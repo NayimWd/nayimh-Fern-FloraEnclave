@@ -11,6 +11,10 @@ const NavProfile = ({ close }) => {
 					className="w-6 h-6 bg-bg_green text-white rounded cursor-pointer"
 				/>
 			</div>
+			<div className="flex flex-col items-center mt-5 ">
+				<CgProfile className="w-14 h-14 text-darker_green" />
+				<h1 className="text-xl mt-1 text-darker_green"> User Name </h1>
+			</div>
 			<div className="w-full flex justify-center items-center gap-5 mt-8">
 				<Link to="/signin">
 					{" "}
@@ -25,10 +29,7 @@ const NavProfile = ({ close }) => {
 					</button>
 				</Link>
 			</div>
-			<div className="flex flex-col items-center mt-5 ">
-				<CgProfile className="w-14 h-14 text-darker_green" />
-				<h1 className="text-xl mt-1 text-darker_green"> User Name </h1>
-			</div>
+			
 		</div>
 	);
 };

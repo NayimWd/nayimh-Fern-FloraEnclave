@@ -14,6 +14,7 @@ import NavProfile from "./NavProfile";
 import MobileCartMenu from "./MobileCartMenu";
 import HeadInfo from "./ui/HeadInfo";
 import DotNotification from "./ui/DotNotification";
+import useClickOutSide from "./hooks/useClickOutSide";
 
 const Navbar = () => {
 	// state for mobile menu toggle
@@ -25,10 +26,16 @@ const Navbar = () => {
 	const [isCart, setIsCart] = useState(false);
 	const [isProfile, setIsProfile] = useState(false);
 	// -------------------------------------------------- //
+	let menuRef = useRef(null);
+	let favRef = useRef(null);
+	let cartRef = useRef(null);
+	let profileRef = useRef(null);
+
 	// toggle funciton
 	const toggleMenu = () => {
 		setIsOpen(!isOpen);
 	};
+
 
 	const toggleFav = () => {
 		setIsFav(!isFav);
@@ -47,31 +54,19 @@ const Navbar = () => {
 		setIsCart(false);
 	};
 
-	// -------------------------------------------------- //
-	// close menu on outsite click
-	let menuRef = useRef();
-	let favRef = useRef();
-	let cartRef = useRef(null);
-	let profileRef = useRef();
+	useClickOutSide(menuRef, ()=> setIsOpen(false));
+	useClickOutSide(favRef, ()=> setIsFav(false));
+	useClickOutSide(cartRef, ()=> setIsCart(false));
+	useClickOutSide(profileRef, ()=> setIsProfile(false));
 
 	
 
-	// function
-	useEffect(() => {
-		// close menu outside
-		let menuhandler = (e) => {
-			if (!menuRef.current?.contains(e.target)) {
-				setIsOpen(false);
-			}
-		};
 
-		document.addEventListener("mousedown", menuhandler);
-	}, []);
 
 	  // sticky on scroll function
 	  useEffect(()=>{
 		const handleScroll = () => {
-		  if(window.scrollY > 300){
+		  if(window.scrollY > 50){
 			setIsSticky(true);
 		  } else {
 			setIsSticky(false)
