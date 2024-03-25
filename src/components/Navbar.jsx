@@ -54,6 +54,7 @@ const Navbar = () => {
 		setIsCart(false);
 	};
 
+	// close sidebar or modals on outside click
 	useClickOutSide(menuRef, ()=> setIsOpen(false));
 	useClickOutSide(favRef, ()=> setIsFav(false));
 	useClickOutSide(cartRef, ()=> setIsCart(false));
@@ -61,7 +62,17 @@ const Navbar = () => {
 
 	
 
+	// // function
+	// useEffect(() => {
+	// 	// close menu outside
+	// 	let menuhandler = (e) => {
+	// 		if (!menuRef.current?.contains(e.target)) {
+	// 			setIsOpen(false);
+	// 		}
+	// 	};
 
+	// 	document.addEventListener("mousedown", menuhandler);
+	// }, []);
 
 	  // sticky on scroll function
 	  useEffect(()=>{
@@ -169,10 +180,12 @@ const Navbar = () => {
 								<DotNotification />
 							</div>
 							{isFav ? (
-								<span ref={favRef} className="fixed top-0 right-0 animation_in">
+								<div  className="absolute z-50">
+								<span  ref={favRef} className="fixed top-0 right-0 animation_in">
 									{" "}
-									<Favoritenav close={toggleFav} />{" "}
+									<Favoritenav  close={toggleFav} />{" "}
 								</span>
+								</div>
 							) : (
 								<span className="fixed animation_out duration-300 "> </span>
 							)}
@@ -188,12 +201,12 @@ const Navbar = () => {
 								<DotNotification />
 							</div>
 							{isCart ? (
-								<span ref={cartRef} className="fixed  top-0 right-0  slider_in">
+								<span ref={cartRef}  className="fixed top-0 right-0 animation_in">
 									{" "}
 									<Cart close={toggleCart} />{" "}
 								</span>
 							) : (
-								<span className="fixed slider_out "> </span>
+								<span className="fixed animation_out duration-300 "> </span>
 							)}
 						</div>
 						<div className="relative">
@@ -218,19 +231,18 @@ const Navbar = () => {
 					</div>
 					{/* ---------------------------------------- */}
 					{/* Toggle button: for small screen */}
-					<div className="flex mt-[10px] lg:hidden">
-						<button
+					<div className="flex mt-[10px] relative lg:hidden">
+						{ !isOpen &&
+							<button
 							onClick={toggleMenu}
 							className="focus:outline-none focus:text-darker_green cursor-pointer p-1 bg-darker_green rounded"
 							aria-label="toggle"
 							alt="close"
 						>
-							{isOpen ? (
-								<MdOutlineClose className="w-6 h-6 text-white_clr" />
-							) : (
-								<CiMenuFries className="w-6 h-6 text-white_clr" />
-							)}
-						</button>
+							
+								<CiMenuFries aria-level="menu opener button" className="w-6 h-6 text-white_clr" />
+							
+						</button>}
 					</div>
 				</div>
 				{/* item for mobile screen */}
@@ -269,6 +281,14 @@ const Navbar = () => {
 							</p>
 						</NavLink>
 					))}
+					<div className="absolute top-0 right-0 px-5">
+					<button onClick={toggleMenu}
+					className="focus:outline-none focus:text-darker_green cursor-pointer p-1 bg-darker_green rounded"
+					aria-label="toggle"
+					alt="close">
+					<MdOutlineClose aria-level="menu closer button" className="w-6 h-6  text-white_clr  " />
+					</button>
+					</div>
 				</div>
 			</nav>
 			{/* ---------------------------------------- */}
@@ -295,14 +315,14 @@ const Navbar = () => {
 						<Favoritenav close={toggleFav} />{" "}
 					</span>
 				) : (
-					<span className="absolute animation_out duration-300 "> </span>
+					<span className="absolute slider_out duration-300 "> </span>
 				)}
 				{isCart ? (
 					<span
 						ref={cartRef}
-						className={`absolute lg:hidden  ${
+						className={`absolute lg:hidden right-0 animation_in ${
 							isSticky ? "-mt-[87px]" : "-mt-[136px]"
-						} right-0 animation_in`}
+						} `}
 					>
 						{" "}
 						<Cart close={toggleCart} />{" "}
@@ -316,3 +336,5 @@ const Navbar = () => {
 };
 
 export default Navbar;
+
+

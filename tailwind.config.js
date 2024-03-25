@@ -34,6 +34,7 @@ export default {
 				dark_green: "#145333",
 				darker_green: "#0B3223",
 				bg_green: "#004F44",
+				bright_green: "#28af5b",
 				green: "#4CAF50",
 				soft_green: "#6BBB6D",
 				warm_tupe: "#BFB5A2",

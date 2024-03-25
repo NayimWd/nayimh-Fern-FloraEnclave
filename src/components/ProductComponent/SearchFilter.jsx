@@ -1,20 +1,33 @@
-import { useState, useRef } from "react";
+import { useState, useRef, useEffect } from "react";
 import { IoIosClose } from "react-icons/io";
 import { CiSearch } from "react-icons/ci";
+import useClickOutSide from "../hooks/useClickOutSide";
+import useDebounce from "../hooks/useDebounce";
 
 const SearchFilter = () => {
 	const [openSearch, setOpenSearch] = useState(false);
-	const searchRef = useRef(null);
+	const [search, setSearch] = useState("")
+	const debounchSearch = useDebounce(search)
+	const SearchBarContainer = useRef(null);
 
-	const handleProductSearch = (search) => {
-		if (search.length > 3) {
-			console.log(search);
-		}
-	};
+	useEffect(()=>{
+		console.log(debounchSearch)
+	},[debounchSearch])
+
+	// const handleProductSearch = (search) => {
+	// 	if (search.length > 3) {
+	// 		console.log(search);
+	// 	}
+	// };
+
+	
 
 	const toggleSearchBtn = () => {
 		setOpenSearch(!openSearch); // toggle search function
 	};
+
+	// close searchBar on outside click
+	useClickOutSide(SearchBarContainer, ()=> setOpenSearch(false))
 
 	return (
 		<div className=" bg-green/20 px-2 w-14 h-12 flex justify-center items-center  border-b-2 border-b-dark_green relative rounded-sm">
@@ -30,10 +43,9 @@ const SearchFilter = () => {
 				/>
 			)}
 			{openSearch && (
-				<div className="absolute top-14 left-0   w-[220px] h-10  bg-white">
+				<div ref={SearchBarContainer} className="absolute top-14 left-0   w-[220px] h-10  bg-white">
 					<input
-						ref={searchRef}
-						onChange={() => handleProductSearch(searchRef.current?.value)}
+						onChange={(e)=>setSearch(e.target.value)}
 						placeholder="Search Here"
 						type="text"
 						className=" text-bg_green font-semibold tracking-wider bg-green/20 py-2 px-4 rounded-sm outline-none border-b-2 border-b-dark_green"

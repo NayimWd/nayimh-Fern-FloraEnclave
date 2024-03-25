@@ -1,17 +1,22 @@
 import { CiFilter } from "react-icons/ci";
 import CustomDropdown from "../ReusableComponent/CustomDropdown";
-import { useState } from "react";
+import { useRef, useState } from "react";
 import SidebarFilter from "./SidebarFilter";
 import SearchFilter from "./SearchFilter";
+import useClickOutSide from "../hooks/useClickOutSide";
 
 const FilterProducts = () => {
 	const [open, setOpen] = useState(false);
+	const sidebarRef = useRef(null);
 	const filterToggle = () => {
 		setOpen(!open); // sidebar filter toggle button
 	};
 
+	// close sidebar filter on outside click
+	useClickOutSide(sidebarRef, ()=> setOpen(false))
+
 	return (
-		<section className="mb-10 padding_x">
+		<section className="mb-10 padding_x relative">
 			<div className="flex flex-col-reverse sm:flex-row gap-5 justify-between items-center">
 				<div>
 					{" "}
@@ -34,8 +39,10 @@ const FilterProducts = () => {
 			</div>
 			{/* side filter option */}
 			{open ? (
+				<div ref={sidebarRef} className="absolute">
 				<div className="fixed top-0 left-0 h-screen w-full xsm:w-[350px] bg-white animation_in z-50 overflow-y-scroll">
 					<SidebarFilter filterToggle={filterToggle} />
+				</div>
 				</div>
 			) : (
 				<span className="fixed top-0 left-0 h-screen w-full xsm:w-[350px] bg-white animation_out duration-300"></span>

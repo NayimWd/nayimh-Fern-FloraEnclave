@@ -1,26 +1,24 @@
-import { useEffect } from "react"
+import { useEffect } from "react";
 
 const useClickOutSide = (ref, handler) => {
-    useEffect(()=>{
-        const listner = e => {
-            const elem = ref?.current;
+	useEffect(() => {
+		const listner = (e) => {
+			const elem = ref?.current;
 
-            if(!elem || elem.contains(e.current)){
-                return;
-            }
-            handler(e)
-        };
+			if (!elem || elem.contains(e.target)) {
+				return;
+			}
+			handler(e);
+		};
 
-        document.addEventListener('mousedown', listner);
-        document.addEventListener('touchstart', listner);
+		document.addEventListener("mousedown", listner);
+		document.addEventListener("touchstart", listner);
 
-        return () => {
-            document.removeEventListener('mousedown', listner);
-            document.removeEventListener('touchstart', listner);
-        }
+		return () => {
+			document.removeEventListener("mousedown", listner);
+			document.removeEventListener("touchstart", listner);
+		};
+	}, [ref, handler]);
+};
 
-    },[ref, handler]);
-
-}
-
-export default useClickOutSide
+export default useClickOutSide;

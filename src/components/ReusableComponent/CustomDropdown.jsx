@@ -1,10 +1,11 @@
 import { useEffect, useRef, useState } from "react";
 import { RiArrowDropDownFill } from "react-icons/ri";
+import useClickOutSide from "../hooks/useClickOutSide";
 
 const CustomDropdown = () => {
 	const [isOption, setIsoption] = useState("Default Sorting");
 	const [open, setOpen] = useState(false);
-
+	const dropDownRef = useRef(null);
 	const handleClick = () => {
 		setOpen(!open);
 	};
@@ -13,6 +14,9 @@ const CustomDropdown = () => {
 		setIsoption(e);
 		setOpen(false);
 	};
+
+	// close drowpDown on outside click
+	useClickOutSide(dropDownRef, ()=> setOpen(false))
 
 		// --- sort filter function---//
 		const handleProductSort = (sort) => {
@@ -53,7 +57,7 @@ const CustomDropdown = () => {
 			</button>
 			<div>
 				{open && (
-					<div className="absolute flex flex-col justify-center items-start right-0 top-16  w-[200px] h-[200px] bg-white  z-[1] rounded shadow-xl">
+					<div ref={dropDownRef} className="absolute flex flex-col justify-center items-start right-0 top-16  w-[200px] h-[200px] bg-white  z-[1] rounded shadow-xl">
 						{dropdownOption.map((opt, i) => (
 							<p
 								onClick={() => handleSelect(opt.option)}

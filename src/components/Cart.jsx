@@ -7,14 +7,14 @@ import { ErrorToast } from "../ui/helper";
 
 const Cart = ({close}) => {
   // state for toggle
-  const [isEmpty, isIsEmpty] = useState(true);
+  const [isEmpty, isIsEmpty] = useState(false);
   // state for product count 
   const [count, setCount] = useState(0)
 
   const handleCount = (e) => {
       if(e === "+"){
         if(count === 15){
-           ErrorToast("Stock Out")
+          return ErrorToast("Stock Out")
         } else {
           setCount(count + 1)
         }

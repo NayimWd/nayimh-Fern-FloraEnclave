@@ -62,7 +62,7 @@ class alertHelper {
     // sweet alert
     sweetSuccess(msg){
         Swal.fire({
-            position: 'top-center',
+            position: 'center',
             icon: 'success',
             title: msg,
             showConfirmButton: false,
