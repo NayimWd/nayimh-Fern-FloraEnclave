@@ -7,7 +7,6 @@ import { CiMenuFries } from "react-icons/ci";
 import { MdOutlineClose } from "react-icons/md";
 import { CiHeart } from "react-icons/ci";
 import { CgProfile } from "react-icons/cg";
-
 import Cart from "./Cart";
 import Favoritenav from "./Favoritenav";
 import NavProfile from "./NavProfile";
@@ -36,7 +35,6 @@ const Navbar = () => {
 		setIsOpen(!isOpen);
 	};
 
-
 	const toggleFav = () => {
 		setIsFav(!isFav);
 		setIsCart(false);
@@ -55,42 +53,26 @@ const Navbar = () => {
 	};
 
 	// close sidebar or modals on outside click
-	useClickOutSide(menuRef, ()=> setIsOpen(false));
-	useClickOutSide(favRef, ()=> setIsFav(false));
-	useClickOutSide(cartRef, ()=> setIsCart(false));
-	useClickOutSide(profileRef, ()=> setIsProfile(false));
+	useClickOutSide(menuRef, () => setIsOpen(false));
+	useClickOutSide(favRef, () => setIsFav(false));
+	useClickOutSide(cartRef, () => setIsCart(false));
+	useClickOutSide(profileRef, () => setIsProfile(false));
 
-	
-
-	// // function
-	// useEffect(() => {
-	// 	// close menu outside
-	// 	let menuhandler = (e) => {
-	// 		if (!menuRef.current?.contains(e.target)) {
-	// 			setIsOpen(false);
-	// 		}
-	// 	};
-
-	// 	document.addEventListener("mousedown", menuhandler);
-	// }, []);
-
-	  // sticky on scroll function
-	  useEffect(()=>{
+	// sticky on scroll function
+	useEffect(() => {
 		const handleScroll = () => {
-		  if(window.scrollY > 50){
-			setIsSticky(true);
-		  } else {
-			setIsSticky(false)
-		  }
+			if (window.scrollY > 50) {
+				setIsSticky(true);
+			} else {
+				setIsSticky(false);
+			}
 		};
-		window.addEventListener('scroll', handleScroll);
-	
-		return ()=> {
-		  window.removeEventListener('scroll', handleScroll);
-		}
-	
-	  },[]);
+		window.addEventListener("scroll", handleScroll);
 
+		return () => {
+			window.removeEventListener("scroll", handleScroll);
+		};
+	}, []);
 
 	// -------------------------------------------------- //
 	// array for nav items
@@ -180,11 +162,14 @@ const Navbar = () => {
 								<DotNotification />
 							</div>
 							{isFav ? (
-								<div  className="absolute z-50">
-								<span  ref={favRef} className="fixed top-0 right-0 animation_in">
-									{" "}
-									<Favoritenav  close={toggleFav} />{" "}
-								</span>
+								<div className="absolute z-50">
+									<span
+										ref={favRef}
+										className="fixed top-0 right-0 animation_in"
+									>
+										{" "}
+										<Favoritenav close={toggleFav} />{" "}
+									</span>
 								</div>
 							) : (
 								<span className="fixed animation_out duration-300 "> </span>
@@ -201,7 +186,10 @@ const Navbar = () => {
 								<DotNotification />
 							</div>
 							{isCart ? (
-								<span ref={cartRef}  className="fixed top-0 right-0 animation_in">
+								<span
+									ref={cartRef}
+									className="fixed top-0 right-0 animation_in"
+								>
 									{" "}
 									<Cart close={toggleCart} />{" "}
 								</span>
@@ -232,17 +220,19 @@ const Navbar = () => {
 					{/* ---------------------------------------- */}
 					{/* Toggle button: for small screen */}
 					<div className="flex mt-[10px] relative lg:hidden">
-						{ !isOpen &&
+						{!isOpen && (
 							<button
-							onClick={toggleMenu}
-							className="focus:outline-none focus:text-darker_green cursor-pointer p-1 bg-darker_green rounded"
-							aria-label="toggle"
-							alt="close"
-						>
-							
-								<CiMenuFries aria-level="menu opener button" className="w-6 h-6 text-white_clr" />
-							
-						</button>}
+								onClick={toggleMenu}
+								className="focus:outline-none focus:text-darker_green cursor-pointer p-1 bg-darker_green rounded"
+								aria-label="toggle"
+								alt="close"
+							>
+								<CiMenuFries
+									aria-level="menu opener button"
+									className="w-6 h-6 text-white_clr"
+								/>
+							</button>
+						)}
 					</div>
 				</div>
 				{/* item for mobile screen */}
@@ -282,12 +272,17 @@ const Navbar = () => {
 						</NavLink>
 					))}
 					<div className="absolute top-0 right-0 px-5">
-					<button onClick={toggleMenu}
-					className="focus:outline-none focus:text-darker_green cursor-pointer p-1 bg-darker_green rounded"
-					aria-label="toggle"
-					alt="close">
-					<MdOutlineClose aria-level="menu closer button" className="w-6 h-6  text-white_clr  " />
-					</button>
+						<button
+							onClick={toggleMenu}
+							className="focus:outline-none focus:text-darker_green cursor-pointer p-1 bg-darker_green rounded"
+							aria-label="toggle"
+							alt="close"
+						>
+							<MdOutlineClose
+								aria-level="menu closer button"
+								className="w-6 h-6  text-white_clr  "
+							/>
+						</button>
 					</div>
 				</div>
 			</nav>
@@ -336,5 +331,3 @@ const Navbar = () => {
 };
 
 export default Navbar;
-
-

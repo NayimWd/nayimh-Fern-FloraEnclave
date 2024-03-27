@@ -23,13 +23,13 @@ const AboutComponent = () => {
 								WE GROW TOP QUALITY HEALTHY PLANTS{" "}
 							</p>
 						</span>
-						<p className="font-jost text-[15px] leading-6 mb-4 text-dark_gray">
+						<p className="font-jost  leading-6 mb-4 text-dark_gray">
 							Praesent metus tellus, elementum eu, semper a, adipiscing nec,
 							purus. Vestibulum volutpat pretium libero. In ut quam vitae odio
 							lacinia tincidunt. Etiam ut purus mattis mauris sodales aliquam.
 							Aenean massa.
 						</p>
-						<p className="font-jost text-[15px] leading-6  text-dark_gray">
+						<p className="font-jost  leading-6  text-dark_gray">
 							In dui magna, posuere eget, vestibulum et, tempor auctor, justo.
 							Vivamus consectetuer hendrerit lacus. In hac habitasse platea
 							dictumst. Ut tincidunt tincidunt erat. Lorem ipsum dolor sit amet,
@@ -42,6 +42,7 @@ const AboutComponent = () => {
 						className="w-full lg:w-[90%] hover:scale-90 delay-300 duration-300"
 						src={about1}
 						alt="aboutImg"
+						loading="lazy"
 					/>
 				</div>
 			</div>
@@ -51,6 +52,7 @@ const AboutComponent = () => {
 						className=" w-full lg:w-[90%] hover:scale-90 delay-300 duration-300"
 						src={about2}
 						alt="aboutImg"
+						loading="lazy"
 					/>
 				</div>
 				<div className="w-full flex flex-col items-start justify-center">
@@ -66,13 +68,13 @@ const AboutComponent = () => {
 								THE HIGH STRESS FAVOUTIRE{" "}
 							</p>
 						</span>
-						<p className="font-jost text-[15px] leading-6 mb-4 text-dark_gray">
+						<p className="font-jost  leading-6 mb-4 text-dark_gray">
 							Praesent metus tellus, elementum eu, semper a, adipiscing nec,
 							purus. Vestibulum volutpat pretium libero. In ut quam vitae odio
 							lacinia tincidunt. Etiam ut purus mattis mauris sodales aliquam.
 							Aenean massa.
 						</p>
-						<p className="font-jost text-[15px] leading-6  text-dark_gray">
+						<p className="font-jost  leading-6  text-dark_gray">
 							In dui magna, posuere eget, vestibulum et, tempor auctor, justo.
 							Vivamus consectetuer hendrerit lacus. In hac habitasse platea
 							dictumst. Ut tincidunt tincidunt erat. Lorem ipsum dolor sit amet,
@@ -81,14 +83,13 @@ const AboutComponent = () => {
 					</div>
 				</div>
 			</div>
-			
-				<AboutPoster />
-				
-				<div className="mt-14 xsm:mt-20 sm:mt-24 lg:mt-[120px]">
-				
-				<NewsLetter/>
+
+			<AboutPoster />
+
+			<div className="mt-14 xsm:mt-20 sm:mt-24 lg:mt-[120px]">
+				<NewsLetter />
 				<InstaImage />
-				</div>
+			</div>
 		</section>
 	);
 };
