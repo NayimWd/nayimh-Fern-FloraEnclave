@@ -1,6 +1,6 @@
 import { useState } from "react";
 import productImage from "../../assets/image/product7.webp";
-import RelatedProduct from "./RelatedProduct";
+
 
 const ProductDetailsTabs = () => {
 	const [selectTab, setSelectedTab] = useState("DESCRIPTION");
@@ -14,9 +14,9 @@ const ProductDetailsTabs = () => {
 			<div className="flex flex-wrap justify-center items-center gap-4 sm:gap-9 border-y py-6">
 				<p
 					onClick={() => handleTabs("DESCRIPTION")}
-					className={`font-jost font-semibold  py-1 leading-6 tracking-[1.6px]  border-b-4 border-white hover:border-bright_green hover:delay-300 hover:duration-300 cursor-pointer ${
+					className={`font-jost font-semibold  py-1 leading-6 tracking-[1.6px]  border-b-4 border-white hover:border-bright_green hover:delay-300 hover:duration-500 cursor-pointer ${
 						selectTab === "DESCRIPTION"
-							? "text-black border-bright_green"
+							? "text-black border-b-bright_green"
 							: "text-dark_gray border-white"
 					} `}
 				>
@@ -24,9 +24,9 @@ const ProductDetailsTabs = () => {
 				</p>
 				<p
 					onClick={() => handleTabs("INFORMATION")}
-					className={`font-jost font-semibold  py-1 leading-6 tracking-[1.6px]  border-b-4 border-white hover:border-bright_green hover:delay-300 hover:duration-300 cursor-pointer ${
+					className={`font-jost font-semibold  py-1 leading-6 tracking-[1.6px]  border-b-4 border-white hover:border-bright_green hover:delay-300 hover:duration-500 cursor-pointer ${
 						selectTab === "INFORMATION"
-							? "text-black border-bright_green"
+							? "text-black border-b-bright_green"
 							: "text-dark_gray border-white"
 					} `}
 				>
@@ -34,9 +34,9 @@ const ProductDetailsTabs = () => {
 				</p>
 				<p
 					onClick={() => handleTabs("REVIEW")}
-					className={`font-jost font-semibold  py-1 leading-6 tracking-[1.6px]  border-b-4 border-white hover:border-bright_green hover:delay-300 hover:duration-300 cursor-pointer ${
+					className={`font-jost font-semibold  py-1 leading-6 tracking-[1.6px]  border-b-4 border-white hover:border-bright_green hover:delay-300 hover:duration-500 cursor-pointer ${
 						selectTab === "REVIEW"
-							? "text-black border-bright_green"
+							? "text-black border-b-bright_green"
 							: "text-dark_gray border-white"
 					} `}
 				>
@@ -115,15 +115,15 @@ const ProductDetailsTabs = () => {
 									</p>
 									<p className="font-jost font-semibold text-lg leading-6 mb-3 text-dark_gray">
 										{" "}
-										payments Through Bkash, Rocket and Nagad{" "}
+										▶ payments Through Bkash, Rocket and Nagad{" "}
 									</p>
 									<p className="font-jost font-semibold text-lg leading-6 mb-3 text-dark_gray">
 										{" "}
-										We offer the option of paying cash on delivery{" "}
+										▶ We offer the option of paying cash on delivery{" "}
 									</p>
 									<p className="font-jost font-semibold text-lg leading-6 mb-3 text-dark_gray">
 										{" "}
-										Fast delivery{" "}
+										▶ Fast delivery{" "}
 									</p>
 								</div>
 							</div>
@@ -142,9 +142,11 @@ const ProductDetailsTabs = () => {
 					className={` ${
 						selectTab === "REVIEW" ? "grid " : "hidden"
 					} grid-cols-1 md:grid-cols-2  w-full justify-between items-center gap-8 `}
-				></div>
+				>
+					<h1>Review</h1>
+				</div>
                 {/*Related Product*/}
-                <RelatedProduct/>
+               
 			</div>
 		</div>
 	);

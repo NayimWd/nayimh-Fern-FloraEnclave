@@ -6,7 +6,7 @@ import useDebounce from "../hooks/useDebounce";
 
 const SearchFilter = () => {
 	const [openSearch, setOpenSearch] = useState(false);
-	const [search, setSearch] = useState("")
+	const [search, setSearch] = useState()
 	const debounchSearch = useDebounce(search)
 	const SearchBarContainer = useRef(null);
 
@@ -14,11 +14,7 @@ const SearchFilter = () => {
 		console.log(debounchSearch)
 	},[debounchSearch])
 
-	// const handleProductSearch = (search) => {
-	// 	if (search.length > 3) {
-	// 		console.log(search);
-	// 	}
-	// };
+	
 
 	
 

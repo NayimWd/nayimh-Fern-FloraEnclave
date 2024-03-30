@@ -1,9 +1,9 @@
 import { useEffect, useState } from "react";
 
 	
-const UseCoundown = ({ seconds }) => {
+const UseCoundown = ({ seconds: days  }) => {
 
-	const [timeLeft, setTimeLeft] = useState(seconds);
+	const [timeLeft, setTimeLeft] = useState(days );
 
 	useEffect(() => {
 		if (timeLeft > 0) {
@@ -15,15 +15,19 @@ const UseCoundown = ({ seconds }) => {
 		}
 	  }, [timeLeft]);
 	
-	  const days = Math.floor(timeLeft / (24 * 60 * 60));
-	  const hours = Math.floor((timeLeft % (24 * 60 * 60)) / (60 * 60));
-	  const minutes = Math.floor((timeLeft % (60 * 60)) / 60);
-	  const remainingSeconds = timeLeft % 60;
+	  const formatNumber = (number) => {
+		return number < 10 ? `0${number}` : number;
+	  };
+	
+	  const daysRemaining = Math.floor(timeLeft / (24 * 60 * 60));
+	  const hoursRemaining = Math.floor((timeLeft % (24 * 60 * 60)) / (60 * 60));
+	  const minutesRemaining = Math.floor((timeLeft % (60 * 60)) / 60);
+	  const secondsRemaining = timeLeft % 60;
 
 	
 
 	return <div className="font-mono">
-	<p>{days} days : {hours} hours : {minutes} minutes : {remainingSeconds} seconds</p>
+	<p>{formatNumber(daysRemaining)} days, {formatNumber(hoursRemaining)} hours, {formatNumber(minutesRemaining)} minutes, {formatNumber(secondsRemaining)} seconds</p>
 	</div>;
 };
 

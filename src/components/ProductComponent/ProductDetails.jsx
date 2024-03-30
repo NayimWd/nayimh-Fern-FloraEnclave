@@ -1,11 +1,11 @@
+import { lazy, useState } from "react";
 import { MdArrowDropDown, MdArrowDropUp } from "react-icons/md";
 import { CgHeart } from "react-icons/cg";
-import SizeGuide from "./SizeGuide";
-import Terms from "./Terms";
+const SizeGuide = lazy(()=>import("./SizeGuide"))
+const Terms = lazy(()=>import("./Terms"))
 import { ErrorToast, SuccessToast } from "../../ui/helper";
 import UseToggle from "../hooks/UseToggle";
 
-import { useState } from "react";
 
 const ProductDetails = () => {
 	const [openSizeModal, setOpenSizeModal] = UseToggle(false);

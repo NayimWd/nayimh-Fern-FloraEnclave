@@ -20,14 +20,11 @@ const ProductSection = () => {
 		fetchData();
 	}, []);
 
-	// --- sidebar option filter function---//
-	const handleFilter = (filter) => {
-		console.log(filter);
-	};
+	
 
 	return (
 		<section className="section_p-y padding_x container w-full">
-			<FilterProducts handleFilter={handleFilter} />
+			<FilterProducts  />
 			{/* Filter section */}
 			<div className="container flex flex-col items-center">
 				<div

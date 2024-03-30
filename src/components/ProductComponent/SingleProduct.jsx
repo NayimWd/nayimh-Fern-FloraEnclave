@@ -1,13 +1,14 @@
+import { lazy } from "react";
 import { useLocation, useParams } from "react-router-dom";
 import PlantImg from "../../assets/image/product4.webp";
 import ProductDetails from "./ProductDetails";
-import ServicePolicy from "./ServicePolicy";
-import ProductDetailsTabs from "./ProductDetailsTabs";
+import RelatedProduct from "./RelatedProduct";
+const ServicePolicy = lazy(()=> import("./ServicePolicy"));
+const ProductDetailsTabs = lazy(()=> import("./ProductDetailsTabs"));
+
 
 const SingleProduct = () => {
-	const { id } = useParams();
-	const location = useLocation();
-	const pathname = location.pathname.slice(1, -2);
+
 
 	return (
 		<>
@@ -18,7 +19,7 @@ const SingleProduct = () => {
 						<span className="text-dark_green"> </span>{" "}
 						<span className="text-dark_green ">
 							{" "}
-							{pathname}{" "}
+							
 							<span className="text-2xl text-dark_green"> &#62;</span> Laceleaf
 							Peace{" "}
 						</span>
@@ -40,6 +41,7 @@ const SingleProduct = () => {
 				<div>
 					<ProductDetailsTabs />
 				</div>
+				<RelatedProduct/>
 			</div>
 		</>
 	);
