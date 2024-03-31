@@ -22,7 +22,9 @@ const Navbar = () => {
 	const [isSticky, setIsSticky] = useState(false);
 	// profile, cart, favorite state
 	const [isFav, setIsFav] = useState(false);
+	const [isLargeFav, setIsLargeFav] = useState(false);
 	const [isCart, setIsCart] = useState(false);
+	const [isLargeCart, setIsLargeCart] = useState(false);
 	const [isProfile, setIsProfile] = useState(false);
 	// -------------------------------------------------- //
 	let menuRef = useRef(null);
@@ -37,19 +39,19 @@ const Navbar = () => {
 
 	const toggleFav = () => {
 		setIsFav(!isFav);
-		setIsCart(false);
-		setIsProfile(false);
+	};
+	const toggleLargeFav = () => {
+		setIsLargeFav(!isLargeFav);
 	};
 	const toggleCart = () => {
 		setIsCart(!isCart);
-		setIsFav(false);
-		setIsProfile(false);
+	};
+	const toggleLargeCart = () => {
+		setIsLargeCart(!isLargeCart);
 	};
 
 	const toggleProfile = () => {
 		setIsProfile(!isProfile);
-		setIsFav(false);
-		setIsCart(false);
 	};
 
 	// close sidebar or modals on outside click
@@ -155,22 +157,20 @@ const Navbar = () => {
 					<div className="hidden lg:flex_center gap-5">
 						<div className="relative">
 							<CiHeart
-								onClick={toggleFav}
+								onClick={toggleLargeFav}
 								className="w-6 h-6 cursor-pointer hover:scale-110 text-white delay-200 ease-in"
 							/>
 							<div className="absolute -top-1 -right-[6px] ">
 								<DotNotification />
 							</div>
-							{isFav ? (
-								<div className="absolute z-50">
-									<span
-										ref={favRef}
-										className="fixed top-0 right-0 animation_in"
-									>
-										{" "}
-										<Favoritenav close={toggleFav} />{" "}
-									</span>
-								</div>
+							{isLargeFav ? (
+								<span className="fixed top-0 right-0 animation_in">
+									{" "}
+									<Favoritenav
+										close={toggleLargeFav}
+										toggle={setIsLargeFav}
+									/>{" "}
+								</span>
 							) : (
 								<span className="fixed animation_out duration-300 "> </span>
 							)}
@@ -178,21 +178,20 @@ const Navbar = () => {
 						<div className="relative ">
 							<img
 								className="cursor-pointer w-5 h-5 hover:scale-110 delay-200 ease-in"
-								onClick={toggleCart}
+								onClick={toggleLargeCart}
 								src={cart}
 								alt="cart"
 							/>
 							<div className="absolute -top-1 -right-2 ">
 								<DotNotification />
 							</div>
-							{isCart ? (
-								<span
-									ref={cartRef}
-									className="fixed top-0 right-0 animation_in"
-								>
-									{" "}
-									<Cart close={toggleCart} />{" "}
-								</span>
+							{isLargeCart ? (
+								<div className="fixed top-0 left-0 w-full h-full bg-black/10 z-0">
+									<span className="fixed top-0 right-0  animation_in">
+										{" "}
+										<Cart close={toggleLargeCart} toggle={setIsLargeCart} />
+									</span>
+								</div>
 							) : (
 								<span className="fixed animation_out duration-300 "> </span>
 							)}

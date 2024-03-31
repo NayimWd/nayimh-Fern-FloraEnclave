@@ -1,7 +1,6 @@
 import { useState } from "react";
 import productImage from "../../assets/image/product7.webp";
 
-
 const ProductDetailsTabs = () => {
 	const [selectTab, setSelectedTab] = useState("DESCRIPTION");
 
@@ -145,8 +144,7 @@ const ProductDetailsTabs = () => {
 				>
 					<h1>Review</h1>
 				</div>
-                {/*Related Product*/}
-               
+				{/*Related Product*/}
 			</div>
 		</div>
 	);

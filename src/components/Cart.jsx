@@ -1,15 +1,17 @@
-import { useState } from "react";
+import { useRef, useState } from "react";
 import { MdOutlineClose } from "react-icons/md";
 import { RiDeleteBin5Line } from "react-icons/ri";
 import emptyImg from "../assets/image/Frame.png";
 import img from "../assets/image/product1.webp";
 import { ErrorToast } from "../ui/helper";
+import useClickOutSide from "./hooks/useClickOutSide";
 
-const Cart = ({ close }) => {
+const Cart = ({ close, toggle }) => {
 	// state for toggle
 	const [isEmpty, isIsEmpty] = useState(false);
 	// state for product count
 	const [count, setCount] = useState(0);
+	const cartRef = useRef(null);
 
 	const handleCount = (e) => {
 		if (e === "+") {
@@ -23,8 +25,11 @@ const Cart = ({ close }) => {
 		}
 	};
 
+	// close on click outside
+	useClickOutSide(cartRef, ()=> toggle(false))
+
 	return (
-		<div className=" w-[300px] xsm:w-[400px] h-screen flex flex-col justify-start  py-0    bg-white_clr  shadow-lg  z-10 relative">
+		<div ref={cartRef} className=" w-[300px] xsm:w-[400px] h-screen flex flex-col justify-start  py-0    bg-white_clr  shadow-lg  z-10 relative">
 			<div className="flex_between items-center w-full   border-b border-dotted">
 				<span className="flex_center h-14 w-14 border-r">
 					<MdOutlineClose

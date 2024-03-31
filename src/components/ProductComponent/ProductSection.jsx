@@ -20,11 +20,9 @@ const ProductSection = () => {
 		fetchData();
 	}, []);
 
-	
-
 	return (
 		<section className="section_p-y padding_x container w-full">
-			<FilterProducts  />
+			<FilterProducts />
 			{/* Filter section */}
 			<div className="container flex flex-col items-center">
 				<div

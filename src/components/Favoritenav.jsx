@@ -1,15 +1,19 @@
 import { MdOutlineClose } from "react-icons/md";
 import emptyImg from "../assets/image/Frame.png";
 import img from "../assets/image/product1.webp";
-import { useState } from "react";
+import { useRef, useState } from "react";
 import { IoCartOutline } from "react-icons/io5";
 import { RiDeleteBin5Line } from "react-icons/ri";
+import useClickOutSide from "./hooks/useClickOutSide";
 
-const Favoritenav = ({ close }) => {
+const Favoritenav = ({ close, toggle }) => {
 	const [empty, setEmpty] = useState(true);
+	const FavRef = useRef(null)
+
+	useClickOutSide(FavRef, ()=> toggle(false))
 
 	return (
-		<div className="flex flex-col  items-center  w-[300px] xsm:w-[400px] h-screen  bg-white_clr  shadow-lg z-10">
+		<div ref={FavRef} className="flex flex-col  items-center  w-[300px] xsm:w-[400px] h-screen  bg-white_clr  shadow-lg z-10">
 			<div className="flex_between items-center w-full   border-b border-dotted">
 				<span className="flex_center h-14 w-14 border-r">
 					<MdOutlineClose
