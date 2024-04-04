@@ -9,23 +9,21 @@ const SidebarFilter = ({ filterToggle }) => {
 	const [selectedSize, setSelectedSize] = useState(""); // state for selected size
     const handleCategories = (category) => {
         setSelectedCategory(category); // Update selected category
-        console.log(category)
 		
     };
+    console.log(selectedCategory)
 
     const handlePrice = (price) => {
         setSelectedPrice(price); // Update selected price
-        console.log(price)
 		
     };
+    console.log(selectedPrice)
 
 	const handleSize = (size) => {
 		setSelectedSize(size) // Update selected size
-        setSelectedSize(size)
-        console.log(size)
-		
 	}
-
+    
+    console.log(selectedSize)
 
 
     const categoryList = ["All", "Indoor", "Flower", "Fruits", "Herbs"];

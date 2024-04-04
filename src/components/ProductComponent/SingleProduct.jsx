@@ -1,14 +1,20 @@
-import { lazy } from "react";
-import { useLocation, useParams } from "react-router-dom";
+import { lazy, useEffect } from "react";
 import PlantImg from "../../assets/image/product4.webp";
 import ProductDetails from "./ProductDetails";
-import RelatedProduct from "./RelatedProduct";
+import { useSearchParams } from "react-router-dom";
 const ServicePolicy = lazy(()=> import("./ServicePolicy"));
 const ProductDetailsTabs = lazy(()=> import("./ProductDetailsTabs"));
+const RelatedProduct = lazy(()=> import("./RelatedProduct"));
 
 
 const SingleProduct = () => {
+	const [product, setProduct] = useSearchParams()
 
+	useEffect(()=> {
+		setProduct({Product: "Laceleaf Peace"})
+	},[])
+
+	const productTitle = product.get("Product")
 
 	return (
 		<>
@@ -19,9 +25,8 @@ const SingleProduct = () => {
 						<span className="text-dark_green"> </span>{" "}
 						<span className="text-dark_green ">
 							{" "}
-							
-							<span className="text-2xl text-dark_green"> &#62;</span> Laceleaf
-							Peace{" "}
+							Product
+							<span className="text-2xl text-dark_green"> &#62;</span> {productTitle}
 						</span>
 					</div>
 				</div>

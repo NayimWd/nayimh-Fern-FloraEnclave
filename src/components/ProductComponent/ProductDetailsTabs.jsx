@@ -1,5 +1,6 @@
 import { useState } from "react";
 import productImage from "../../assets/image/product7.webp";
+import ProductReview from "./ProductReview";
 
 const ProductDetailsTabs = () => {
 	const [selectTab, setSelectedTab] = useState("DESCRIPTION");
@@ -46,9 +47,9 @@ const ProductDetailsTabs = () => {
 				<div
 					className={` ${
 						selectTab === "DESCRIPTION" ? "grid " : "hidden"
-					} grid-cols-1 md:grid-cols-2  w-full justify-between items-center gap-8 `}
+					} grid-cols-1 md:grid-cols-2  w-full justify-between items-start gap-8 `}
 				>
-					<div className="w-full order-2 md:order-1 flex flex-col items-end justify-center">
+					<div className="w-full order-2 md:order-1 flex flex-col items-start justify-center">
 						<div className=" w-full lg:w-[90%]">
 							<p className=" text-2xl sm:text-4xl md:text-[40px] leading-[43px] font-jost">
 								{" "}
@@ -140,11 +141,10 @@ const ProductDetailsTabs = () => {
 				<div
 					className={` ${
 						selectTab === "REVIEW" ? "grid " : "hidden"
-					} grid-cols-1 md:grid-cols-2  w-full justify-between items-center gap-8 `}
+					}   w-full`}
 				>
-					<h1>Review</h1>
+					<ProductReview/>
 				</div>
-				{/*Related Product*/}
 			</div>
 		</div>
 	);

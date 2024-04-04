@@ -66,7 +66,7 @@ const ProductDetails = () => {
 								? "bg-dark_green text-white disabled:"
 								: "text-dark_green  "
 						}`}
-						aria-level="wishList button"
+						aria-level="Add To Favorit list"
 					/>{" "}
 				</span>
 			</div>
@@ -85,7 +85,7 @@ const ProductDetails = () => {
 						Special Offer
 					</legend>
 
-					<span className="font-jost text-bright_green leading-7 sm:text-lg">
+					<span className="font-jost text-dark_green leading-7 sm:text-lg">
 						<p>
 							<span className="mr-1">▶</span> In Stock
 						</p>
@@ -121,37 +121,11 @@ const ProductDetails = () => {
 				/>
 			</div>
 			<div className="flex  flex-wrap justify-start items-center gap-8 mt-6">
-				<div className="flex border-2 rounded-sm">
-					<div className=" flex w-20 justify-center items-center  ">
-						<p className="text-lg font-jost leading-7 font-bold">{increment}</p>
-					</div>
-					<div className="flex flex-col border-l-2">
-						<button
-							disabled={increment === 15}
-							aria-level="increment button"
-							onClick={() => handleIncrement("+")}
-							className="border-b px-3 cursor-pointer"
-						>
-							<MdArrowDropUp aria-level="increment icon" className="w-8 h-8 " />
-						</button>
-						<button
-							disabled={increment === 1}
-							aria-level="increment button"
-							onClick={() => handleIncrement("-")}
-							className="px-3 cursor-pointer"
-						>
-							<MdArrowDropDown
-								aria-level="decrement icon"
-								className="w-8 h-8 "
-							/>
-						</button>
-					</div>
-				</div>
-				<div className="flex gap-3 lg:gap-8">
-					<button className="bg-dark_green text-sm sm:text-base text-white py-3 px-5 xsm:py-4 xsm:px-7 lg:py-5 lg:px-10 rounded">
+				<div className="flex w-full gap-3 lg:gap-8">
+					<button className="bg-dark_green text-sm sm:text-base text-white py-3 px-5 xsm:py-4 xsm:px-7 lg:py-5 lg:px-10 rounded w-1/2">
 						ADD TO CART
 					</button>
-					<button className="bg-dark_green text-sm sm:text-base text-white py-3 px-5 xsm:py-4 xsm:px-7 lg:py-5 lg:px-10 rounded">
+					<button className="bg-dark_green text-sm sm:text-base text-white py-3 px-5 xsm:py-4 xsm:px-7 lg:py-5 lg:px-10 rounded w-1/2">
 						BUY NOW
 					</button>
 				</div>

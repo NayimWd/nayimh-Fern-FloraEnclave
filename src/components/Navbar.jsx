@@ -186,12 +186,10 @@ const Navbar = () => {
 								<DotNotification />
 							</div>
 							{isLargeCart ? (
-								<div className="fixed top-0 left-0 w-full h-full bg-black/10 z-0">
-									<span className="fixed top-0 right-0  animation_in">
-										{" "}
-										<Cart close={toggleLargeCart} toggle={setIsLargeCart} />
-									</span>
-								</div>
+								<span className="fixed top-0 right-0  animation_in">
+									{" "}
+									<Cart close={toggleLargeCart} toggle={setIsLargeCart} />
+								</span>
 							) : (
 								<span className="fixed animation_out duration-300 "> </span>
 							)}

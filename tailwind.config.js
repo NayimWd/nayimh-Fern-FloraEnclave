@@ -41,7 +41,7 @@ export default {
 				light_red: "#FFCDD2",
 				dark_red: "#D32F2F",
 				blue: "#1976D2",
-				yellow: "#FFD54F",
+				
 			},
 			backgroundImage: {
 				heroBg: "url('./src/assets/image/s6.webp')",
